@@ -1,0 +1,18 @@
+<!-- Partials/List/Item.html -->
+<div class="geolocations-list-item" id="location-{locationItem.uid}" data-index="{iterator.index}" data-uid="{locationItem.uid}" data-latitude="{locationItem.latitude}" data-longitude="{locationItem.longitude}">
+	<p>
+		<span class="location-title">{locationItem.title}</span><span class="location-address">{locationItem.address}, {locationItem.zip} {locationItem.city}</span>
+		<span class="location-date"><f:format.date format="{f:translate(key:'geocoder.list.dateFormat')}">{locationItem.datetime}</f:format.date></span>
+		<f:if condition="{locationItem.categories}">
+			<!-- Categories -->
+			<span class="location-categories" itemprop="keywords">
+				<f:for each="{locationItem.categories}" as="category">
+					{category.title}
+				</f:for>
+			</span>
+		</f:if>
+		<div class="location-body">
+			<f:format.html>{locationItem.bodytext}</f:format.html>
+		</div>
+	</p>
+</div>

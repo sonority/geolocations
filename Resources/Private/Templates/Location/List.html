@@ -1,0 +1,26 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+<f:layout name="Default" />
+
+<!-- Templates/Location/List.html -->
+<f:section name="content">
+	<f:flashMessages renderMode="div" />
+	<div id="geolocations-list" data-clickmode="{settings.list.clickMode}">
+		<f:if condition="{locations}">
+			<div id="geolocations-list-items">
+				<f:for each="{locations}" as="locationItem" iteration="iterator">
+					<f:if condition="{settings.list.initialHidden} != 1">
+						<f:render partial="List/Item" arguments="{locationItem:locationItem,iterator:iterator}" />
+					</f:if>
+				</f:for>
+			</div>
+			<!-- POIs -->
+			<!--TYPO3SEARCH_end-->
+			<div id="geolocations-list-markers">
+				<f:for each="{locations}" as="locationItem" iteration="iterator">
+					<f:render partial="List/Poi" arguments="{locationItem:locationItem,iterator:iterator}" />
+				</f:for>
+			</div>
+			<!--TYPO3SEARCH_begin-->
+		</f:if>
+	</div>
+</f:section>

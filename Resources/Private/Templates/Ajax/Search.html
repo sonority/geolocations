@@ -1,0 +1,43 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+<f:flashMessages renderMode="div" />
+<f:if condition="{f:count(subject: locations)} > 0">
+	<f:then>
+		<div class="alert alert-success" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<f:if condition="{searchType} == 'radial'">
+				<f:then>
+					<f:translate key="geocoder.search.locationsInRadius" arguments="{0: radius, 1: count}" />
+				</f:then>
+				<f:else>
+					<f:translate key="geocoder.search.locationsInFulltext" arguments="{0: searchString, 1: count}" />
+				</f:else>
+			</f:if>
+		</div>
+		<div id="geolocations-list-items">
+			<f:for each="{locations}" as="locationItem" iteration="iterator">
+				<f:render partial="List/Item" arguments="{locationItem:locationItem,iterator:iterator}" />
+			</f:for>
+		</div>
+		<!--TYPO3SEARCH_end-->
+		<div id="geolocations-list-markers">
+			<f:for each="{locations}" as="locationItem" iteration="iterator">
+				<f:render partial="List/Poi" arguments="{locationItem:locationItem,iterator:iterator}" />
+			</f:for>
+		</div>
+		<!--TYPO3SEARCH_begin-->
+	</f:then>
+	<f:else>
+		<div class="alert alert-info" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<f:if condition="{searchType} == 'radial'">
+				<f:then>
+					<f:translate key="geocoder.search.noLocationsInRadius" arguments="{0: radius}" />
+				</f:then>
+				<f:else>
+					<f:translate key="geocoder.search.noLocationsInFulltext" arguments="{0: searchString}" />
+				</f:else>
+			</f:if>
+		</div>
+	</f:else>
+</f:if>
+

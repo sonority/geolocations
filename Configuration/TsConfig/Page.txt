@@ -1,0 +1,22 @@
+TCEFORM {
+	tx_geolocations_domain_model_location {
+		fe_user {
+			# Set this to the UID of the fe_group from which users should be selected
+			PAGE_TSCONFIG_ID =
+		}
+		status {
+			addItems {
+				#1 = Status 1
+				#2 = Status 2
+				#3 = Status 3
+			}
+		}
+	}
+}
+
+TCAdefaults {
+	tx_geolocations_domain_model_location {
+		zone = 95
+		country = 40
+	}
+}

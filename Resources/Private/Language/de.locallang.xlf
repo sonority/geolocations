@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="geocoder.missingGeometry" xml:space="preserve" approved="yes">
+				<source>Could not show map: missing latitude/longitude!</source>
+				<target>Karte kann nicht geladen werden: Längengrad/Breitengrad fehlt!</target>
+			</trans-unit>
+			<trans-unit id="geocoder.missingAddress" xml:space="preserve" approved="yes">
+				<source>Geocode not possible: missing location (address, zip or city)!</source>
+				<target>Geocode nicht möglich: Adressangabe fehlt (Adresse, Postleitzahl oder Stadt)!</target>
+			</trans-unit>
+			<trans-unit id="geocoder.error" xml:space="preserve" approved="yes">
+				<source>Geocode error: </source>
+				<target>Geocode Fehler: </target>
+			</trans-unit>
+			<trans-unit id="geocoder.ok" xml:space="preserve" approved="yes">
+				<source>Geocode OK</source>
+				<target>Geocode OK</target>
+			</trans-unit>
+			<trans-unit id="geocoder.geocode.label" xml:space="preserve" approved="yes">
+				<source>Geocode</source>
+				<target>Geocode</target>
+			</trans-unit>
+			<trans-unit id="geocoder.geocode.titleText" xml:space="preserve" approved="yes">
+				<source>Determine the geolocation (latitude/longitude) of the current address</source>
+				<target>Ermittle die Geoposition (Längengrad/Breitengrad) der aktuellen Adresse</target>
+			</trans-unit>
+
+			<trans-unit id="geocoder.map.openInGoogleMaps" xml:space="preserve" approved="yes">
+				<source>Open in Google Maps</source>
+				<target>In Google Maps ansehen</target>
+			</trans-unit>
+			<trans-unit id="geocoder.map.titleText" xml:space="preserve" approved="yes">
+				<source>Unveil the map with the current coordinates</source>
+				<target>Zeige die Karte mit den aktuellen Koordinaten</target>
+			</trans-unit>
+			<trans-unit id="geocoder.map.toggleLock" xml:space="preserve" approved="yes">
+				<source>Toggle drag/scroll</source>
+				<target>Sperre Verschieben/Scrollen</target>
+			</trans-unit>
+
+			<trans-unit id="geocoder.search.searchType" xml:space="preserve" approved="yes">
+				<source>Search mode</source>
+				<target>Suchmodus</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.searchType.I.0" xml:space="preserve" approved="yes">
+				<source>Radial search</source>
+				<target>Umkreissuche</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.searchType.I.1" xml:space="preserve" approved="yes">
+				<source>Text search</source>
+				<target>Textsuche</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.buttonLabel" xml:space="preserve" approved="yes">
+				<source>Search</source>
+				<target>Suche</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.addressLabel" xml:space="preserve" approved="yes">
+				<source>Location.</source>
+				<target>Standort</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.addressInput" xml:space="preserve" approved="yes">
+				<source>Please fill in your location.</source>
+				<target>Geben Sie einen Standort ein.</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.searchLabel" xml:space="preserve" approved="yes">
+				<source>Searchword</source>
+				<target>Suchwort</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.searchInput" xml:space="preserve" approved="yes">
+				<source>Please fill in your searchword.</source>
+				<target>Geben Sie einen Suchbegriff ein.</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.locationsInRadius" xml:space="preserve" approved="yes">
+				<source>There are %2$d locations within a distance of %1$d km.</source>
+				<target>Es wurden %2$d Standorte im Umkreis von %1$d Km gefunden.</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.locationsInFulltext" xml:space="preserve" approved="yes">
+				<source>There are %2$d locations with the keyword "%1$s".</source>
+				<target>Es wurden %2$d Standorte mit dem Suchwort "%1$s" gefunden.</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.noLocationsInRadius" xml:space="preserve" approved="yes">
+				<source>There are no locations within a distance of %1$d km.</source>
+				<target>Es wurden keine Standorte im Umkreis von %1$d Km gefunden.</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.noLocationsInFulltext" xml:space="preserve" approved="yes">
+				<source>There are no locations with the keyword "%1$s".</source>
+				<target>Es wurden keine Standorte mit dem Suchwort "%1$s" gefunden.</target>
+			</trans-unit>
+			<trans-unit id="geocoder.search.distances" xml:space="preserve" approved="yes">
+				<source>%1$d km</source>
+				<target>%1$d Km</target>
+			</trans-unit>
+
+			<trans-unit id="geocoder.list.dateFormat" xml:space="preserve" approved="yes">
+				<source>%m/%d/%Y</source>
+				<target>%d.%m.%Y</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

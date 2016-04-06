@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="tx_geolocations_domain_model_location" xml:space="preserve">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.image" xml:space="preserve">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.marker" xml:space="preserve">
+				<source>Marker</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.placeId" xml:space="preserve">
+				<source>Google's Place-ID</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.zip" xml:space="preserve">
+				<source>ZIP</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.zone" xml:space="preserve">
+				<source>State/Province</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.country" xml:space="preserve">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.www" xml:space="preserve">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.email" xml:space="preserve">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.phone" xml:space="preserve">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.status" xml:space="preserve">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.datetime" xml:space="preserve">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.feUser" xml:space="preserve">
+				<source>User</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.categories" xml:space="preserve">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category" xml:space="preserve">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category.marker" xml:space="preserve">
+				<source>Marker</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category.description" xml:space="preserve">
+				<source>Decription</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

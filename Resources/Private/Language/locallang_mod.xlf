@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-26T10:48:01Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="mlang_tabs_tab" xml:space="preserve">
+				<source>Locations</source>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tablabel" xml:space="preserve">
+				<source>Locations Administration</source>
+			</trans-unit>
+			<trans-unit id="createNew" xml:space="preserve">
+				<source>Create new location</source>
+			</trans-unit>
+
+			<trans-unit id="module.overview" xml:space="preserve">
+				<source>Overview</source>
+			</trans-unit>
+			<trans-unit id="module.geocode" xml:space="preserve">
+				<source>Coordinates</source>
+			</trans-unit>
+
+			<trans-unit id="overview.title" xml:space="preserve">
+				<source>Overview of all locations of this page</source>
+			</trans-unit>
+			<trans-unit id="overview.noLocations" xml:space="preserve">
+				<source>No Locations available.</source>
+			</trans-unit>
+
+			<trans-unit id="geocode.title" xml:space="preserve">
+				<source>Retrieve missing Coordinates</source>
+			</trans-unit>
+			<trans-unit id="geocode.count" xml:space="preserve">
+				<source>There are %1$d records with missing coordinates.</source>
+			</trans-unit>
+			<trans-unit id="geocode.ok" xml:space="preserve">
+				<source>There are no records with missing coordinates.</source>
+			</trans-unit>
+			<trans-unit id="geocode.startGeocode" xml:space="preserve">
+				<source>Start geocoding</source>
+			</trans-unit>
+			<trans-unit id="geocode.js.confirmTitle" xml:space="preserve">
+				<source>Geocode Locations</source>
+			</trans-unit>
+			<trans-unit id="geocode.js.geocodeLocations" xml:space="preserve">
+				<source>Do you really want to add missing coordinates for ALL Locations?</source>
+			</trans-unit>
+			<trans-unit id="geocode.js.backgroundProcessRunning" xml:space="preserve">
+				<source>Add coordinates: ###%</source>
+			</trans-unit>
+			<trans-unit id="geocode.js.backgroundProcessFinished" xml:space="preserve">
+				<source>Retrieving coordinates done!</source>
+			</trans-unit>
+
+			<trans-unit id="tx_geolocations_domain_model_location.title" xml:space="preserve">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.address" xml:space="preserve">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.zip" xml:space="preserve">
+				<source>ZIP</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.city" xml:space="preserve">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.placeId" xml:space="preserve">
+				<source>Google Place-ID</source>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.categories" xml:space="preserve">
+				<source>Category</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

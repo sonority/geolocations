@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="tx_geolocations_domain_model_location" xml:space="preserve" approved="yes">
+				<source>Location</source>
+				<target>Standort</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.title" xml:space="preserve" approved="yes">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.image" xml:space="preserve" approved="yes">
+				<source>Image</source>
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.marker" xml:space="preserve" approved="yes">
+				<source>Marker</source>
+				<target>Marker</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.latitude" xml:space="preserve" approved="yes">
+				<source>Latitude</source>
+				<target>Breitengrad</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.longitude" xml:space="preserve" approved="yes">
+				<source>Longitude</source>
+				<target>Längengrad</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.placeId" xml:space="preserve" approved="yes">
+				<source>Google Place-ID</source>
+				<target>Google Place-ID</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.address" xml:space="preserve" approved="yes">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.zip" xml:space="preserve" approved="yes">
+				<source>ZIP</source>
+				<target>Postleitzahl</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.city" xml:space="preserve" approved="yes">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.zone" xml:space="preserve" approved="yes">
+				<source>State/Province</source>
+				<target>Bundesland</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.country" xml:space="preserve" approved="yes">
+				<source>Country</source>
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.www" xml:space="preserve" approved="yes">
+				<source>Website</source>
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.email" xml:space="preserve" approved="yes">
+				<source>E-Mail</source>
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.phone" xml:space="preserve" approved="yes">
+				<source>Phone</source>
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.status" xml:space="preserve" approved="yes">
+				<source>Status</source>
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.datetime" xml:space="preserve" approved="yes">
+				<source>Date</source>
+				<target>Datum</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.feUser" xml:space="preserve" approved="yes">
+				<source>User</source>
+				<target>Benutzer</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.categories" xml:space="preserve" approved="yes">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category" xml:space="preserve" approved="yes">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category.title" xml:space="preserve" approved="yes">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category.marker" xml:space="preserve" approved="yes">
+				<source>Marker</source>
+				<target>Marker</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_category.description" xml:space="preserve" approved="yes">
+				<source>Decription</source>
+				<target>Beschreibung</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

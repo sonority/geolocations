@@ -1,0 +1,62 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+{namespace c=TYPO3\CMS\Core\ViewHelpers}
+
+<f:layout name="Backend" />
+
+<f:section name="content">
+    <f:if condition="{showMessage}">
+        <script>
+			TYPO3.Flashmessage.display(
+					TYPO3.Severity.ok,
+					'<f:translate key="{messageTitleKey}" />',
+					'<f:translate key="{messageContentKey}" />',
+					5
+					);
+        </script>
+    </f:if>
+
+	<h1><f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.title"/></h1>
+
+    <f:if condition="{count}">
+        <f:then>
+            <div class="typo3-message message-information">
+                <div class="message-body">
+					<f:format.printf arguments="{0: count}">
+						<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.count"/>
+					</f:format.printf>
+                </div>
+            </div>
+
+			<div id="progressbar" class="progressBar">
+				<div class="progress">
+					<div class="progress-text"></div>
+					<div class="progress-bar" role="progressbar" aria-valuenow="28.3" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+
+			<a id="start" class="btn btn-default" href="#">
+				<c:icon identifier="actions-download" />
+				<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.startGeocode" />
+			</a>
+        </f:then>
+        <f:else>
+            <div class="typo3-message message-ok">
+                <div class="message-body">
+					<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.ok"/>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+
+	<script type="text/javascript">
+		var tx_geolocations_strings = {
+			confirmTitle: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.confirmTitle"/>',
+			geocodeLocations: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.geocodeLocations"/>',
+			backgroundProcessRunning: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.backgroundProcessRunning"/>',
+			backgroundProcessFinished: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.backgroundProcessFinished"/>',
+			startUrl: '<f:uri.action action="startGeocodeProcess"/>',
+			checkUrl: '<f:uri.action action="checkGeocodeProcess"/>'
+		};
+	</script>
+
+</f:section>

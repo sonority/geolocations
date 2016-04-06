@@ -1,0 +1,22 @@
+div#progressbar {
+	margin: 0 0 20px;
+	font-weight: bold;
+}
+#typo3-docheader .typo3-docheader-buttons {
+	height: 38px;
+}
+#progressbar {
+	display: none;
+}
+#progressbar .progress {
+	height: 24px;
+	line-height: 24px;
+}
+#progressbar .progress-text {
+	float: left;
+	padding: 1px 6px;
+}
+#progressbar .progress-bar {
+	float: none;
+	background-color: #adf;
+}

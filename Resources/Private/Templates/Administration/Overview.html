@@ -1,0 +1,75 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+{namespace c=TYPO3\CMS\Core\ViewHelpers}
+
+<f:layout name="Backend" />
+
+<f:section name="content">
+    <f:if condition="{showMessage}">
+        <script>
+			TYPO3.Flashmessage.display(
+					TYPO3.Severity.ok,
+					'<f:translate key="{messageTitleKey}" />',
+					'<f:translate key="{messageContentKey}" />',
+					5
+					);
+        </script>
+    </f:if>
+
+    <h1><f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:overview.title"/></h1>
+    <f:if condition="{locations}">
+        <f:then>
+            <f:be.widget.paginate objects="{locations}" as="paginatedLocations" configuration="{itemsPerPage: settings.list.itemsPerPage}">
+                <table class="table table-striped table-hover">
+                    <thead>
+						<tr>
+							<th></th>
+							<th>{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:tx_geolocations_domain_model_location.title')}</th>
+							<th>{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:tx_geolocations_domain_model_location.address')}</th>
+							<th>{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:tx_geolocations_domain_model_location.zip')}</th>
+							<th>{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:tx_geolocations_domain_model_location.city')}</th>
+							<th>{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:tx_geolocations_domain_model_location.latitude')}</th>
+							<th>{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:tx_geolocations_domain_model_location.longitude')}</th>
+						</tr>
+                    </thead>
+                    <tbody>
+					<f:for each="{paginatedLocations}" as="location">
+						<tr class="db_list_normal">
+							<td nowrap="nowrap" class="col-icon">
+								<span class="t3js-icon icon icon-size-small icon-state-default icon-tcarecords-tx_geolocations_domain_model_location-default" data-identifier="tcarecords-tx_geolocations_domain_model_location-default">
+									<img src="/typo3conf/ext/geolocations/Resources/Public/Icons/tx_geolocations_domain_model_location.svg" width="16" height="16">
+									<f:if condition="{location.hidden}">
+										<span class="icon-overlay icon-overlay-hidden"><img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/overlay/overlay-hidden.svg" width="16" height="16"></span>
+									</f:if>
+								</span>
+							</td>
+							<td class="title"><a href="{s:Be.Record(uid:location.uid)}" title="UID: {location.uid}">{location.title}</a></td>
+							<td>{location.address}</td>
+							<td>{location.zip}</td>
+							<td>{location.city}</td>
+							<td>{location.latitude}</td>
+							<td>{location.longitude}</td>
+						</tr>
+					</f:for>
+                    </tbody>
+                </table>
+            </f:be.widget.paginate>
+        </f:then>
+        <f:else>
+            <div class="typo3-message message-notice">
+                <div class="message-body">
+					<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:overview.noLocations"/>
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+
+	<script type="text/javascript">
+		var tx_geolocations_strings = {
+			confirmTitle: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.confirmTitle"/>',
+			geocodeLocations: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.geocodeLocations"/>',
+			backgroundProcessRunning: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.backgroundProcessRunning"/>',
+			backgroundProcessFinished: '<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocode.js.backgroundProcessFinished"/>'
+		};
+	</script>
+
+</f:section>

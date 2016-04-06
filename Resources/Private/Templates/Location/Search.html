@@ -1,0 +1,83 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+<f:layout name="Default" />
+
+<!-- Templates/Location/Search.html -->
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:flashMessages renderMode="div" />
+	<div id="geolocations-search" data-search="{searchObject}" data-autoposition="{settings.search.automaticPosition}" data-autocompleter="{settings.search.autocompleter.enable}" data-autocompleter-country="{settings.search.autocompleter.country}" data-autocompleter-types="{settings.search.autocompleter.types}" data-autocompleter-language="{settings.search.autocompleter.language}" data-perimeter="{settings.search.showCircleOnMap}">
+		<f:if condition="{settings.search.searchTypeSelector}">
+			<div id="search-type" class="form-inline">
+				<div class="row">
+					<div class="form-group col-xs-12">
+						<div class="radio">
+							<label>
+								<input type="radio" name="searchType" id="search-type-radial" value="radial" checked>
+								<f:translate key="geocoder.search.searchType.I.0" />
+							</label>
+						</div>
+						<div class="radio">
+							<label>
+								<input type="radio" name="searchType" id="search-type-fulltext" value="fulltext">
+								<f:translate key="geocoder.search.searchType.I.1" />
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</f:if>
+		<f:if condition="{settings.search.showFulltextSearch}">
+			<div id="search-fulltext" class="form-inline">
+				<div class="row">
+					<div class="form-group col-sm-10">
+						<label class="sr-only" for="geolocations-fulltextsearch"><f:translate key="geocoder.search.searchLabel" /></label>
+						<f:form.textfield class="form-control" id="search-keyword" placeholder="{f:translate(key:'geocoder.search.searchInput')}" />
+						<span class="glyphicon glyphicon-remove search-clear" aria-hidden="true"></span>
+					</div>
+					<div class="form-group col-sm-2">
+						<f:form.button id="search-fulltext-button" type="submit" class="btn btn-primary">
+							<f:translate key="geocoder.search.buttonLabel" />
+						</f:form.button>
+					</div>
+				</div>
+			</div>
+		</f:if>
+		<f:if condition="{settings.search.showRadialSearch}">
+			<div id="search-radial" class="form-inline">
+				<div class="row">
+					<div class="form-group col-sm-7">
+						<label class="sr-only" for="geolocations-address"><f:translate key="geocoder.search.addressLabel" /></label>
+						<f:form.textfield class="form-control" id="search-address" name="tx_geolocations_pi1[address]" placeholder="{f:translate(key:'geocoder.search.addressInput')}" />
+						<span class="glyphicon glyphicon-remove search-clear" aria-hidden="true"></span>
+						<span id="geolocations-message" aria-hidden="true"></span>
+					</div>
+					<div class="form-group col-xs-8 col-sm-3">
+						<label class="sr-only" for="geolocations-radius">Radius</label>
+						<f:form.select value="{settings.search.radialDefault}" class="form-control" id="search-radius" name="tx_geolocations_pi1[radius]" options="{settings.search.radialSearchDistances}" />
+					</div>
+					<div class="form-group col-xs-4 col-sm-2">
+						<f:form.button id="search-radial-button" type="submit" class="btn btn-primary">
+							<f:translate key="geocoder.search.buttonLabel" />
+						</f:form.button>
+					</div>
+				</div>
+			</div>
+		</f:if>
+		<f:if condition="{settings.search.showCategories}">
+			<div class="form-inline">
+				<div class="row">
+					<f:if condition="{categories}">
+						<div id="search-categories" class="form-group col-xs-12">
+							<f:for each="{categories}" as="category" iteration="iterator">
+								<div class="checkbox">
+									<label><input type="checkbox" value="{category.uid}" checked="checked" /> {category.title}</label>
+								</div>
+							</f:for>
+						</div>
+					</f:if>
+				</div>
+			</div>
+		</f:if>
+	</div>
+	<!--TYPO3SEARCH_begin-->
+</f:section>

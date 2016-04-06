@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-03-26T10:48:01Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="mlang_tabs_tab" xml:space="preserve" approved="yes">
+				<source>Locations</source>
+				<target>Standorte</target>
+			</trans-unit>
+			<trans-unit id="mlang_labels_tablabel" xml:space="preserve" approved="yes">
+				<source>Locations Administration</source>
+				<target>Standorte Administration</target>
+			</trans-unit>
+			<trans-unit id="createNew" xml:space="preserve" approved="yes">
+				<source>Create new location</source>
+				<target>Neuen Standort erstellen</target>
+			</trans-unit>
+
+			<trans-unit id="module.overview" xml:space="preserve" approved="yes">
+				<source>Overview</source>
+				<target>Übersicht</target>
+			</trans-unit>
+			<trans-unit id="module.geocode" xml:space="preserve" approved="yes">
+				<source>Coordinates</source>
+				<target>Koordinaten</target>
+			</trans-unit>
+
+			<trans-unit id="overview.title" xml:space="preserve" approved="yes">
+				<source>Overview of all locations of this page</source>
+				<target>Übersicht aller Standorte dieser Seite</target>
+			</trans-unit>
+			<trans-unit id="overview.noLocations" xml:space="preserve" approved="yes">
+				<source>No Locations available.</source>
+				<target>Keine Standorte an dieser Stelle verfügbar. Bitte wählen Sie eine Seite die Standort-Einträge beinhaltet.</target>
+			</trans-unit>
+
+			<trans-unit id="geocode.title" xml:space="preserve" approved="yes">
+				<source>Retrieve missing Coordinates</source>
+				<target>Aktualisiere fehlende Koordinaten</target>
+			</trans-unit>
+			<trans-unit id="geocode.count" xml:space="preserve" approved="yes">
+				<source>There are %1$d records with missing coordinates.</source>
+				<target>Es wurden %1$d Einträge mit fehlenden Koordinaten gefunden.</target>
+			</trans-unit>
+			<trans-unit id="geocode.ok" xml:space="preserve" approved="yes">
+				<source>There are no records with missing coordinates.</source>
+				<target>Es wurden keine Einträge mit fehlenden Koordinaten gefunden.</target>
+			</trans-unit>
+			<trans-unit id="geocode.startGeocode" xml:space="preserve" approved="yes">
+				<source>Start Geocoding</source>
+				<target>Starte Geocoding</target>
+			</trans-unit>
+			<trans-unit id="geocode.js.confirmTitle" xml:space="preserve" approved="yes">
+				<source>Geocode Locations</source>
+				<target>Geocode Standorte</target>
+			</trans-unit>
+			<trans-unit id="geocode.js.geocodeLocations" xml:space="preserve" approved="yes">
+				<source>Do you really want to add missing coordinates for ALL Locations?</source>
+				<target>Wollen Sie die fehlenden Koordinaten ALLER Standorte ergänzen?</target>
+			</trans-unit>
+			<trans-unit id="geocode.js.backgroundProcessRunning" xml:space="preserve" approved="yes">
+				<source>Add coordinates: ###%</source>
+				<target>Ergänze Koordinaten: ###%</target>
+			</trans-unit>
+			<trans-unit id="geocode.js.backgroundProcessFinished" xml:space="preserve" approved="yes">
+				<source>Retrieving coordinates done!</source>
+				<target>Empfang der Koordinaten abgeschlossen!</target>
+			</trans-unit>
+
+			<trans-unit id="tx_geolocations_domain_model_location.title" xml:space="preserve" approved="yes">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.address" xml:space="preserve" approved="yes">
+				<source>Address</source>
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.zip" xml:space="preserve" approved="yes">
+				<source>ZIP</source>
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.city" xml:space="preserve" approved="yes">
+				<source>City</source>
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.latitude" xml:space="preserve" approved="yes">
+				<source>Latitude</source>
+				<target>Breitengrad</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.longitude" xml:space="preserve" approved="yes">
+				<source>Longitude</source>
+				<target>Längengrad</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.placeId" xml:space="preserve" approved="yes">
+				<source>Google Place-ID</source>
+				<target>Google Place-ID</target>
+			</trans-unit>
+			<trans-unit id="tx_geolocations_domain_model_location.categories" xml:space="preserve" approved="yes">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,43 @@
+plugin.tx_geolocations {
+
+	view {
+		# cat=plugin.tx_geolocations/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:geolocations/Resources/Private/Templates/
+		# cat=plugin.tx_geolocations/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:geolocations/Resources/Private/Partials/
+		# cat=plugin.tx_geolocations/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:geolocations/Resources/Private/Layouts/
+	}
+
+	settings {
+		# cat=plugin.tx_geolocations/file; type=string; label=Path to CSS file
+		cssFile = EXT:geolocations/Resources/Public/Css/geolocations_fe.css
+		jsFile = EXT:geolocations/Resources/Public/JavaScript/Geolocations.min.js
+		searchFields = title,bodytext,address,zip,city
+		search {
+			autocompleter {
+				# Leave empty for no restriction
+				country =
+				# https://developers.google.com/maps/documentation/javascript/places-autocomplete?hl=de#add_autocomplete
+				types =
+				# Leave empty for language-autoselection (https://developers.google.com/maps/faq#languagesupport)
+				language =
+			}
+		}
+	}
+
+}
+
+#==============================================
+# BE-module configuration for EXT:geolocations
+#==============================================
+module.tx_geolocations {
+	settings {
+		list {
+			itemsPerPage = 50
+		}
+		search {
+			fields = title,bodytext,address,zip,city
+		}
+	}
+}

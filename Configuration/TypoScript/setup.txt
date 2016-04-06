@@ -1,0 +1,103 @@
+# ==============================================
+# FE-Plugin configuration for EXT:geolocations
+# ==============================================
+plugin.tx_geolocations {
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+	persistence {
+		storagePid =
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+	view {
+		templateRootPaths {
+			0 = EXT:geolocations/Resources/Private/Templates/
+			1 = {$plugin.tx_geolocations.view.templateRootPath}
+		}
+
+		partialRootPaths {
+			0 = EXT:geolocations/Resources/Private/Partials/
+			1 = {$plugin.tx_geolocations.view.partialRootPath}
+		}
+
+		layoutRootPaths {
+			0 = EXT:geolocations/Resources/Private/Layouts/
+			1 = {$plugin.tx_geolocations.view.layoutRootPath}
+		}
+	}
+
+	# Modify the translation
+	_LOCAL_LANG {
+		default {
+			# read_more = more >>
+		}
+	}
+
+	settings {
+		cssFile = {$plugin.tx_geolocations.settings.cssFile}
+
+		demandClass =
+
+		searchFields = {$plugin.tx_geolocations.settings.searchFields}
+		allowedOrderByFields = title,tstamp,crdate,datetime
+
+		search {
+			# Calculate distance in radial-search (deactivate if you don't need it to gain performance)
+			calulcateDistance = 1
+			# Calculate in kilometers (0 = use miles instead)
+			kilometer = 1
+			# Autocomplete-settings
+			autocompleter {
+				# Restrict autocompleter results to thi country (leave it empty for all)
+				country = {$plugin.tx_geolocations.settings.search.autocompleter.country}
+				# Set the type of result, see https://developers.google.com/places/web-service/autocomplete#place_types
+				types = {$plugin.tx_geolocations.settings.search.autocompleter.types}
+				# This is automatically set to $GLOBALS['TSFE']->sys_language_isocode, but you can override it with a fixed value
+				language = {$plugin.tx_geolocations.settings.search.autocompleter.language}
+			}
+		}
+		map {
+			# Defines the minimum zoom of the map (no value means no restriction)
+			maxZoom = 18
+			# Defines the maximum zoom of the map (no value means no restriction)
+			minZoom = 7
+		}
+		# Ignore plugin-settings and override values
+		override {
+			search {
+				#showRadialSearch = 0
+			}
+		}
+	}
+}
+
+page {
+	# Include inline-languages
+	inlineLanguageLabelFiles {
+		tx_geolocations_js = EXT:geolocations/Resources/Private/Language/locallang_js.xlf
+	}
+	includeCSS {
+		tx_geolocations = {$plugin.tx_geolocations.settings.cssFile}
+	}
+	includeJSFooterlibs {
+		tx_geolocations = {$plugin.tx_geolocations.settings.jsFile}
+	}
+}
+
+
+#==============================================
+# BE-module configuration for EXT:tx_geolocations
+#==============================================
+module.tx_geolocations {
+	settings {
+		orderBy = title
+		sortOrder = asc
+		list {
+			itemsPerPage = {$module.tx_geolocations.settings.list.itemsPerPage}
+		}
+		search {
+			fields = {$module.tx_geolocations.settings.search.fields}
+		}
+	}
+}

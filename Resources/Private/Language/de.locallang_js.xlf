@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="autocomplete.success" xml:space="preserve" approved="yes">
+				<source>Position could be automatically resolved.</source>
+				<target>Position wurde automatisch ermittelt.</target>
+			</trans-unit>
+			<trans-unit id="autocomplete.error" xml:space="preserve" approved="yes">
+				<source>Geolocation service failed.</source>
+				<target>Fehler beim Geolocations-Service.</target>
+			</trans-unit>
+			<trans-unit id="autocomplete.notavailable" xml:space="preserve" approved="yes">
+				<source>Position could not be resolved.</source>
+				<target>Position konnte nicht automatisch ermittelt werden.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

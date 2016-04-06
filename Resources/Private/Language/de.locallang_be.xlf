@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="pi1_title" xml:space="preserve" approved="yes">
+				<source>Geolocations</source>
+				<target>Geolocations</target>
+			</trans-unit>
+
+			<trans-unit id="palette.paletteAddress" xml:space="preserve" approved="yes">
+				<source>Address data</source>
+				<target>Adressdaten</target>
+			</trans-unit>
+			<trans-unit id="palette.paletteGeolocation" xml:space="preserve" approved="yes">
+				<source>Geolocation</source>
+				<target>Geolocation</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_tab.general" xml:space="preserve" approved="yes">
+				<source>General</source>
+				<target>Allgemein</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.map" xml:space="preserve" approved="yes">
+				<source>Map</source>
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.list" xml:space="preserve" approved="yes">
+				<source>List</source>
+				<target>Liste</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.search" xml:space="preserve" approved="yes">
+				<source>Search</source>
+				<target>Suche</target>
+			</trans-unit>
+			<trans-unit id="flexforms_tab.template" xml:space="preserve" approved="yes">
+				<source>Template</source>
+				<target>Template</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_general.switchableControllerActions" xml:space="preserve" approved="yes">
+				<source>Plugin type</source>
+				<target>Plugin Typ</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.switchableControllerActions.I.0" xml:space="preserve" approved="yes">
+				<source>Map view</source>
+				<target>Kartenansicht</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.switchableControllerActions.I.1" xml:space="preserve" approved="yes">
+				<source>List view</source>
+				<target>Listenansicht</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.switchableControllerActions.I.2" xml:space="preserve" approved="yes">
+				<source>Searchform</source>
+				<target>Suchformular</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.switchableControllerActions.I.3" xml:space="preserve" approved="yes">
+				<source>Details view</source>
+				<target>Detailansicht</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy" xml:space="preserve" approved="yes">
+				<source>Order by</source>
+				<target>Sortieren nach</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.I.1" xml:space="preserve" approved="yes">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.I.2" xml:space="preserve" approved="yes">
+				<source>Timestamp</source>
+				<target>Zeitstempel</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.I.3" xml:space="preserve" approved="yes">
+				<source>Creation date</source>
+				<target>Erstellungsdatum</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.orderBy.I.4" xml:space="preserve" approved="yes">
+				<source>Date field</source>
+				<target>Datumsfeld</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sortOrder" xml:space="preserve" approved="yes">
+				<source>Sort order</source>
+				<target>Sortierung</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sortOrder.I.1" xml:space="preserve" approved="yes">
+				<source>Ascendending</source>
+				<target>Aufsteigend</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.sortOrder.I.2" xml:space="preserve" approved="yes">
+				<source>Descendending</source>
+				<target>Absteigend</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.limit" xml:space="preserve" approved="yes">
+				<source>Limit</source>
+				<target>Limit</target>
+			</trans-unit>
+			<trans-unit id="flexforms_general.recursive.I.inherit" xml:space="preserve" approved="yes">
+				<source>Defined in typoscript</source>
+				<target>Definiert in TypoScript</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_shared.categories" xml:space="preserve" approved="yes">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
+			<trans-unit id="flexforms_shared.limit" xml:space="preserve" approved="yes">
+				<source>Limit</source>
+				<target>Limit</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_map.initialCoordinates" xml:space="preserve" approved="yes">
+				<source>Coordinates</source>
+				<target>Koordinaten</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.initialZoomLevel" xml:space="preserve" approved="yes">
+				<source>Zoom level</source>
+				<target>Zoom Level</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.scrollwheel" xml:space="preserve" approved="yes">
+				<source>Enable scrollwheel</source>
+				<target>Aktiviere Scrollrad</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.draggable" xml:space="preserve" approved="yes">
+				<source>Enable dragging</source>
+				<target>Aktiviere Verschieben der Karte</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.enableDragScroll" xml:space="preserve" approved="yes">
+				<source>Enable drag/scroll in initial state</source>
+				<target>Aktiviere Verschieben und Scrollen im Ausgangszustand</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.zoomControl" xml:space="preserve" approved="yes">
+				<source>Enable zoom control</source>
+				<target>Aktiviere Steuerung für Vergrößerung</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.backgroundColor" xml:space="preserve" approved="yes">
+				<source>Background color</source>
+				<target>Hintergrundfarbe</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.circleColor" xml:space="preserve" approved="yes">
+				<source>Circle color</source>
+				<target>Farbe des Positionkreises</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.fullscreenControl" xml:space="preserve" approved="yes">
+				<source>Enable fullscreen control</source>
+				<target>Aktiviere Vollbild</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.mapTypeIds" xml:space="preserve" approved="yes">
+				<source>Selectable map types</source>
+				<target>Auswählbare Kartentypen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.mapTypeIds.I.0" xml:space="preserve" approved="yes">
+				<source>Satellite</source>
+				<target>Satellit</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.mapTypeIds.I.1" xml:space="preserve" approved="yes">
+				<source>Roadmap</source>
+				<target>Straßenkarte</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.mapTypeIds.I.2" xml:space="preserve" approved="yes">
+				<source>Hybrid</source>
+				<target>Hybrid</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.mapTypeIds.I.3" xml:space="preserve" approved="yes">
+				<source>Terrain</source>
+				<target>Gelände</target>
+			</trans-unit>
+			<trans-unit id="flexforms_map.userStyles" xml:space="preserve" approved="yes">
+				<source>User defined map style (JSON)</source>
+				<target>Benutzerdefinierter Kartenstil (JSON)</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_list.clickMode" xml:space="preserve" approved="yes">
+				<source>Click-action</source>
+				<target>Klick-Aktion</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.clickMode.I.0" xml:space="preserve" approved="yes">
+				<source>No action</source>
+				<target>Keine Aktion</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.clickMode.I.1" xml:space="preserve" approved="yes">
+				<source>Unveil record</source>
+				<target>Eintrag aufklappen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.clickMode.I.2" xml:space="preserve" approved="yes">
+				<source>Show in map</source>
+				<target>In Karte zeigen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.initialState" xml:space="preserve" approved="yes">
+				<source>Initial state</source>
+				<target>Ausgangszustand</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.initialState.I.0" xml:space="preserve" approved="yes">
+				<source>Empty</source>
+				<target>Leer</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.initialState.I.1" xml:space="preserve" approved="yes">
+				<source>Show all records</source>
+				<target>Zeige alle Einträge</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.initialState.I.2" xml:space="preserve" approved="yes">
+				<source>Show specific records</source>
+				<target>Zeige bestimmte Einträge</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.initialState.I.3" xml:space="preserve" approved="yes">
+				<source>Show records from specific categories</source>
+				<target>Zeige Einträge bestimmter Kategorie</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.initialHidden" xml:space="preserve" approved="yes">
+				<source>Hide initial list</source>
+				<target>Verstecke Liste im Ausgangszustand</target>
+			</trans-unit>
+			<trans-unit id="flexforms_list.singleRecords" xml:space="preserve" approved="yes">
+				<source>Single records</source>
+				<target>Einzelne Einträge</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_search.searchResultPid" xml:space="preserve" approved="yes">
+				<source>Searchresult PID</source>
+				<target>Suchergebnis PID</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.autocompleter.enable" xml:space="preserve" approved="yes">
+				<source>Enable autocompleter</source>
+				<target>Aktiviere Autocompleter</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.automaticPosition" xml:space="preserve" approved="yes">
+				<source>Automatically determine the current position</source>
+				<target>Automatische Ermittlung der aktuellen Position</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.showAllRecordsLink" xml:space="preserve" approved="yes">
+				<source>Show link for "All records"</source>
+				<target>Zeige Link für "Alle Einträge"</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.showRadialSearch" xml:space="preserve" approved="yes">
+				<source>Show radial search</source>
+				<target>Zeige Umkreissuche</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.radialSearchDistances" xml:space="preserve" approved="yes">
+				<source>Radius value (Comma separated list)</source>
+				<target>Radius Werte (Komma separierte Liste)</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.showFulltextSearch" xml:space="preserve" approved="yes">
+				<source>Show fulltext search</source>
+				<target>Zeige Volltextsuche</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.showCircleOnMap" xml:space="preserve" approved="yes">
+				<source>Show circle on map</source>
+				<target>Zeige Umkreis auf der Karte</target>
+			</trans-unit>
+			<trans-unit id="flexforms_search.showCategories" xml:space="preserve" approved="yes">
+				<source>Show category selection</source>
+				<target>Zeige Kategorieauswahl</target>
+			</trans-unit>
+
+			<trans-unit id="flexforms_template.cropMaxCharacters" xml:space="preserve" approved="yes">
+				<source>Crop Characters</source>
+				<target>Anzahl an Zeichen</target>
+			</trans-unit>
+			<trans-unit id="flexforms_template.templateLayout" xml:space="preserve" approved="yes">
+				<source>Template layout</source>
+				<target>Template Layout</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

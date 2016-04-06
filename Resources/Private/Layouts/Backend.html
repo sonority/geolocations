@@ -1,0 +1,50 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+{namespace c=TYPO3\CMS\Core\ViewHelpers}
+
+<f:be.container>
+	<f:be.pageRenderer includeCssFiles="{
+		1: '../typo3conf/ext/geolocations/Resources/Public/Css/geolocations_be.css'
+	}" includeJsFiles="{
+		2: '../typo3conf/ext/geolocations/Resources/Public/JavaScript/geolocations_be.min.js'
+	}" loadJQuery="1" loadExtJsTheme="0"/>
+	<div class="typo3-fullDoc">
+		<div id="typo3-docheader">
+			<div class="typo3-docheader-functions">
+				<div class="left">
+					<f:be.buttons.csh />
+					<f:be.menus.actionMenu>
+						<f:be.menus.actionMenuItem label="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:module.overview')}" controller="Administration" action="overview" />
+						<f:be.menus.actionMenuItem label="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:module.geocode')}" controller="Administration" action="geocode" />
+					</f:be.menus.actionMenu>
+				</div>
+				<div class="right">
+					<f:be.pagePath />
+					<f:be.pageInfo />
+				</div>
+			</div>
+
+            <div class="typo3-docheader-buttons">
+                <div class="left">
+                    <div class="x-btn btn btn-default btn-sm x-btn-noicon" style="width: auto;">
+                        <span class="t3js-icon icon icon-size-small icon-state-default">
+                            <a href="{s:Be.Record()}" title="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:createNew')}">
+								{c:icon(identifier:'actions-add')}
+                            </a>
+                        </span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="right">
+					<div class="btn-toolbar" role="toolbar" aria-label="">
+						<f:be.buttons.shortcut />
+					</div>
+                </div>
+            </div>
+		</div>
+		<div id="typo3-docbody">
+			<div id="typo3-inner-docbody" class="geolocations-administration">
+				<f:render section="content" />
+			</div>
+		</div>
+	</div>
+</f:be.container>

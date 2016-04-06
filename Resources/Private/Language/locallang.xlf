@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="geocoder.missingGeometry" xml:space="preserve">
+				<source>Could not show map: missing latitude/longitude!</source>
+			</trans-unit>
+			<trans-unit id="geocoder.missingAddress" xml:space="preserve">
+				<source>Geocode not possible: missing location (address, zip or city)!</source>
+			</trans-unit>
+			<trans-unit id="geocoder.error" xml:space="preserve">
+				<source>Geocode error: </source>
+			</trans-unit>
+			<trans-unit id="geocoder.ok" xml:space="preserve">
+				<source>Geocode OK</source>
+			</trans-unit>
+			<trans-unit id="geocoder.geocode.label" xml:space="preserve">
+				<source>Geocode</source>
+			</trans-unit>
+			<trans-unit id="geocoder.geocode.titleText" xml:space="preserve">
+				<source>Determine the geolocation (latitude/longitude) of the current address</source>
+			</trans-unit>
+
+			<trans-unit id="geocoder.map.openInGoogleMaps" xml:space="preserve">
+				<source>Open in Google Maps</source>
+			</trans-unit>
+			<trans-unit id="geocoder.map.titleText" xml:space="preserve">
+				<source>Unveil the map with the current coordinates</source>
+			</trans-unit>
+			<trans-unit id="geocoder.map.toggleLock" xml:space="preserve">
+				<source>Toggle drag/scroll</source>
+			</trans-unit>
+
+			<trans-unit id="geocoder.search.buttonLabel" xml:space="preserve">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.addressLabel" xml:space="preserve">
+				<source>Location.</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.addressInput" xml:space="preserve">
+				<source>Please fill in your location.</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.searchLabel" xml:space="preserve">
+				<source>Searchword</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.searchInput" xml:space="preserve">
+				<source>Please fill in your searchword.</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.locationsInRadius" xml:space="preserve">
+				<source>There are %2$d locations within a distance of %1$d km.</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.locationsInFulltext" xml:space="preserve">
+				<source>There are %2$d locations with the keyword "%1$s".</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.noLocationsInRadius" xml:space="preserve">
+				<source>There are no locations within a distance of %1$d km.</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.noLocationsInFulltext" xml:space="preserve">
+				<source>There are no locations with the keyword "%1$s".</source>
+			</trans-unit>
+			<trans-unit id="geocoder.search.distances" xml:space="preserve">
+				<source>%1$d km</source>
+			</trans-unit>
+
+			<trans-unit id="geocoder.list.dateFormat" xml:space="preserve">
+				<source>%m/%d/%Y</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

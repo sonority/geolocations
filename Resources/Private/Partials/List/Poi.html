@@ -1,0 +1,23 @@
+<!-- Partials/List/Poi.html -->
+<div class="geolocation-list-info" id="location-info-{locationItem.uid}" data-index="{iterator.index}" data-uid="{locationItem.uid}" data-latitude="{locationItem.latitude}" data-longitude="{locationItem.longitude}" data-placeid="{locationItem.placeId}" data-title="{f:format.htmlspecialchars(value:locationItem.title)}" data-icon="{f:uri.image(src:locationItem.mapIcon.uid,treatIdAsReference:1)}" style="display:none;">
+	<div class="poi-info-window gm-style">
+		<div>
+			<div class="info-title">{locationItem.title}</div>
+			<div class="address">
+				<div class="info-address">{locationItem.address}</div>
+				<div class="info-city">{locationItem.zip} {locationItem.city}</div>
+				<div class="info-www">
+					<f:link.external uri="{locationItem.www}" class="view-link" target="_blank">{locationItem.www}</f:link.external>
+				</div>
+				<div class="info-email">
+					<f:link.email email="{locationItem.email}" class="view-link" />
+				</div>
+				<div class="info-phone">{locationItem.phone}</div>
+				<div class="info-country">{locationItem.countryName}</div>
+			</div>
+		</div>
+		<a class="info-link" target="_blank" href="//www.google.com/maps/place/{locationItem.latitude},{locationItem.longitude}">
+			<f:translate key="geocoder.map.openInGoogleMaps"/>
+		</a>
+	</div>
+</div>

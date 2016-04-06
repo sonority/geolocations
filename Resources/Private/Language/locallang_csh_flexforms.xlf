@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-03-10T18:00:00Z" product-name="geolocations">
+		<header/>
+		<body>
+			<trans-unit id="settings.map.defaultStyle.description" xml:space="preserve">
+				<source>JSON coded map style parameters</source>
+			</trans-unit>
+			<trans-unit id="settings.map.defaultStyle.details" xml:space="preserve">
+				<source>Further details: http://googlemaps.github.io/js-samples/styledmaps/wizard/index.html</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

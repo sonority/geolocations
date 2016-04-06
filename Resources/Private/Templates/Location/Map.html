@@ -1,0 +1,13 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+<f:layout name="Default" />
+
+<!-- Templates/Location/Map.html -->
+<f:section name="content">
+	<div id="geolocations-map" data-center="{settings.map.initialCoordinates}" data-zoom="{settings.map.initialZoomLevel}" data-minzoom="{settings.map.minZoom}" data-maxzoom="{settings.map.maxZoom}" data-zoomcontrol="{settings.map.zoomControl}" data-draggable="{settings.map.draggable}" data-scrollwheel="{settings.map.scrollwheel}" data-enabledragscroll="{settings.map.enableDragScroll}" data-fullscreencontrol="{settings.map.fullscreenControl}" data-background="{settings.map.backgroundColor}" data-circle="{settings.map.circleColor}" data-maptypes="{settings.map.mapTypeIds}" data-userstyles="{settings.map.userStyles}">
+		<div id="map-canvas"></div>
+		<div id="loading-overlay"><span class="glyphicon glyphicon-cog loading-icon"></span></div>
+		<div class="toggle-lock" id="toggle-lock" title="{f:translate(key:'geocoder.map.toggleLock')}" style="display:none;">
+			<span class="glyphicon glyphicon-lock"></span>
+		</div>
+	</div>
+</f:section>

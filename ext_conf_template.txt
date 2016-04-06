@@ -1,0 +1,4 @@
+# cat=basic//1; type=string; label=apiKey
+apiKey =
+# cat=basic//2; type=boolean; label=Enable backend module
+enableBackendModule = 0
