@@ -909,6 +909,19 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * Set map-icon
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $mapIcon
+     * @return void
+     */
+    public function setMapIcon($mapIcon)
+    {
+        $this->mapIcon = $mapIcon;
+    }
+
+    /**
+     * Get map-icon
+     *
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $mapIcon
      */
     public function getMapIcon()
@@ -921,7 +934,6 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
             $categories = $this->getCategories();
             foreach ($categories as $category) {
                 $categoryMarker = $category->getMarker();
-                return $categoryMarker;
             }
             if (!is_null($categoryMarker)) {
                 return $categoryMarker;

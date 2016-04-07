@@ -1,5 +1,5 @@
 <!-- Partials/List/Poi.html -->
-<div class="geolocation-list-info" id="location-info-{locationItem.uid}" data-index="{iterator.index}" data-uid="{locationItem.uid}" data-latitude="{locationItem.latitude}" data-longitude="{locationItem.longitude}" data-placeid="{locationItem.placeId}" data-title="{f:format.htmlspecialchars(value:locationItem.title)}" data-icon="{f:uri.image(src:locationItem.mapIcon.uid,treatIdAsReference:1)}" style="display:none;">
+<div class="geolocation-list-info" id="location-info-{locationItem.uid}" data-index="{iterator.index}" data-uid="{locationItem.uid}" data-latitude="{locationItem.latitude}" data-longitude="{locationItem.longitude}" data-placeid="{locationItem.placeId}" data-title="{f:format.htmlspecialchars(value:locationItem.title)}" data-icon="<f:if condition="{locationItem.mapIcon.uid}">{f:uri.image(src:locationItem.mapIcon.uid,treatIdAsReference:1)}</f:if>" style="display:none;">
 	<div class="poi-info-window gm-style">
 		<div>
 			<div class="info-title">{locationItem.title}</div>

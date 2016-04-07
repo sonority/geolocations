@@ -1,11 +1,9 @@
-div#progressbar {
-	margin: 0 0 20px;
-	font-weight: bold;
-}
 #typo3-docheader .typo3-docheader-buttons {
-	height: 38px;
+	height: 38px !important;
 }
 #progressbar {
+	margin: 0 0 20px;
+	font-weight: bold;
 	display: none;
 }
 #progressbar .progress {
