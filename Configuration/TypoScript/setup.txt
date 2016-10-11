@@ -49,7 +49,7 @@ plugin.tx_geolocations {
 			kilometer = 1
 			# Autocomplete-settings
 			autocompleter {
-				# Restrict autocompleter results to thi country (leave it empty for all)
+				# Restrict autocompleter results to this country (leave it empty for all)
 				country = {$plugin.tx_geolocations.settings.search.autocompleter.country}
 				# Set the type of result, see https://developers.google.com/places/web-service/autocomplete#place_types
 				types = {$plugin.tx_geolocations.settings.search.autocompleter.types}
@@ -79,9 +79,11 @@ page {
 	}
 	includeCSS {
 		tx_geolocations = {$plugin.tx_geolocations.settings.cssFile}
+		tx_geolocations.disableCompression = 1
 	}
 	includeJSFooterlibs {
 		tx_geolocations = {$plugin.tx_geolocations.settings.jsFile}
+		tx_geolocations.disableCompression = 1
 	}
 }
 

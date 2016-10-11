@@ -55,8 +55,8 @@ class LocationController extends BaseController
      */
     public function initializeMapAction()
     {
-        // Remove newline and tabs and wrap the style in {}
-        $userStyles = '{' . preg_replace('/[\\x09-\\x10]+/S', '', $this->settings['map']['userStyles']) . '}';
+        // Remove newlines followed by tabs/whitespaces and wrap the styledefinition in curly brackets
+        $userStyles = '{' . preg_replace('/\n+[\t\s]*/', '', $this->settings['map']['userStyles']) . '}';
         $this->settings['map']['userStyles'] = json_encode($userStyles);
     }
 
@@ -96,7 +96,7 @@ class LocationController extends BaseController
     public function mapAction()
     {
         $this->initializeDefaultAction();
-        // The map itself does not list any locations. You need to place a list- or search-plugin on the same page
+        // The map itself does not list any locations. You need to place a list-plugin on the same page
     }
 
     /**

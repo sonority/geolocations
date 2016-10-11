@@ -6,6 +6,8 @@ $fieldLanguageFilePrefix = 'LLL:EXT:geolocations/Resources/Private/Language/loca
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToInsertRecords('tx_geolocations_domain_model_location');
 
+$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['geolocations']);
+
 $tx_geolocations_domain_model_location = [
     'ctrl' => [
         'title' => $fieldLanguageFilePrefix . 'tx_geolocations_domain_model_location',
@@ -28,12 +30,11 @@ $tx_geolocations_domain_model_location = [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
-            'fe_group' => 'fe_group',
+            'fe_group' => 'fe_group'
         ],
         'iconfile' => 'EXT:geolocations/Resources/Public/Icons/tx_geolocations_domain_model_location.svg',
         'searchFields' => 'uid,title,address,zip,city',
-        'requestUpdate' => 'country',
-        'thumbnail' => 'image',
+        'thumbnail' => 'image'
     ],
     'interface' => [
         'showRecordFieldList' => 'pid,tstamp,crdate,cruser_id,sys_language_uid,l10n_parent,l10n_diffsource,deleted,hidden,starttime,endtime,fe_group,title,bodytext,image,marker,latitude,longitude,place_id,address,zip,city,zone,country,www,email,phone,status,datetime,fe_user,categories'
@@ -48,13 +49,13 @@ $tx_geolocations_domain_model_location = [
         'tstamp' => [
             'label' => 'tstamp',
             'config' => [
-                'type' => 'passthrough',
+                'type' => 'passthrough'
             ]
         ],
         'crdate' => [
             'label' => 'crdate',
             'config' => [
-                'type' => 'passthrough',
+                'type' => 'passthrough'
             ]
         ],
         'cruser_id' => [
@@ -75,9 +76,9 @@ $tx_geolocations_domain_model_location = [
                         'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
                         -1,
                         'flags-multiple'
-                    ],
+                    ]
                 ],
-                'default' => 0,
+                'default' => 0
             ]
         ],
         'l10n_parent' => [
@@ -88,10 +89,10 @@ $tx_geolocations_domain_model_location = [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'items' => [
-                    ['', 0],
+                    ['', 0]
                 ],
                 'foreign_table' => 'tx_geolocations_domain_model_location',
-                'foreign_table_where' => 'AND tx_geolocations_domain_model_location.pid=###CURRENT_PID### AND tx_geolocations_domain_model_location.sys_language_uid IN (-1,0)',
+                'foreign_table_where' => 'AND tx_geolocations_domain_model_location.pid=###CURRENT_PID### AND tx_geolocations_domain_model_location.sys_language_uid IN (-1,0)'
             ]
         ],
         'l10n_diffsource' => [
@@ -105,7 +106,7 @@ $tx_geolocations_domain_model_location = [
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'default' => 0
+                'default' => 1
             ]
         ],
         'starttime' => [
@@ -117,7 +118,7 @@ $tx_geolocations_domain_model_location = [
                 'size' => 16,
                 'max' => 20,
                 'eval' => 'datetime',
-                'default' => 0,
+                'default' => 0
             ]
         ],
         'endtime' => [
@@ -129,7 +130,7 @@ $tx_geolocations_domain_model_location = [
                 'size' => 16,
                 'max' => 20,
                 'eval' => 'datetime',
-                'default' => 0,
+                'default' => 0
             ]
         ],
         'fe_group' => [
@@ -143,21 +144,21 @@ $tx_geolocations_domain_model_location = [
                 'items' => [
                     [
                         'LLL:EXT:lang/locallang_general.xlf:LGL.hide_at_login',
-                        -1,
+                        -1
                     ],
                     [
                         'LLL:EXT:lang/locallang_general.xlf:LGL.any_login',
-                        -2,
+                        -2
                     ],
                     [
                         'LLL:EXT:lang/locallang_general.xlf:LGL.usergroups',
-                        '--div--',
+                        '--div--'
                     ],
                 ],
                 'exclusiveKeys' => '-1,-2',
                 'foreign_table' => 'fe_groups',
-                'foreign_table_where' => 'ORDER BY fe_groups.title',
-            ],
+                'foreign_table_where' => 'ORDER BY fe_groups.title'
+            ]
         ],
         'title' => [
             'exclude' => 0,
@@ -165,14 +166,13 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 60,
-                'eval' => 'required',
+                'eval' => 'required'
             ]
         ],
         'bodytext' => [
             'exclude' => 0,
             'l10n_mode' => 'prefixLangTitle',
             'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext_formlabel',
-            //'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.text',
             'config' => [
                 'type' => 'text',
                 'cols' => 80,
@@ -238,7 +238,8 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 14,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'placeholder' => '00.00000000'
             ]
         ],
         'longitude' => [
@@ -247,7 +248,8 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 14,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'placeholder' => '00.00000000'
             ]
         ],
         'place_id' => [
@@ -266,7 +268,7 @@ $tx_geolocations_domain_model_location = [
                 'type' => 'user',
                 'userFunc' => 'Sonority\Geolocations\Form\Element\GeoCodeElement->render',
                 'size' => 30,
-                'eval' => 'required'
+                'eval' => 'required,trim'
             ]
         ],
         'zip' => [
@@ -275,8 +277,9 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 8,
-                'max' => 5,
-                'eval' => 'num,trim'
+                'max' => 8,
+                'eval' => 'num,trim',
+                'placeholder' => '1234'
             ]
         ],
         'city' => [
@@ -297,13 +300,12 @@ $tx_geolocations_domain_model_location = [
                     ['', ''],
                 ],
                 'foreign_table' => 'static_country_zones',
-                'foreign_table_where' => 'AND zn_country_uid=\'###REC_FIELD_country###\' ORDER BY static_country_zones.zn_name_local',
+                'foreign_table_where' => ' ORDER BY static_country_zones.zn_name_local',
                 'itemsProcFunc' => 'SJBR\StaticInfoTables\Hook\Backend\Form\ElementRenderingHelper->translateCountryZonesSelector',
                 'disableNoMatchingValueElement' => true,
                 'size' => 1,
                 'minitems' => 0,
-                'maxitems' => 1,
-                'eval' => 'required'
+                'maxitems' => 1
             ]
         ],
         'country' => [
@@ -326,7 +328,9 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'softref' => 'typolink'
+                //'softref' => 'typolink',
+                'eval' => 'nospace,trim,domainname',
+                'placeholder' => 'https://www.domainname.com/'
             ]
         ],
         'email' => [
@@ -335,6 +339,8 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
+                'eval' => 'nospace,lower,email',
+                'placeholder' => 'email@domainname.com'
             ]
         ],
         'phone' => [
@@ -343,6 +349,8 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 20,
+                'eval' => 'trim',
+                'placeholder' => '+43 1 12345678'
             ]
         ],
         'status' => [
@@ -355,7 +363,7 @@ $tx_geolocations_domain_model_location = [
                     ['', 0],
                 ],
                 'size' => 1,
-                'maxitems' => 1,
+                'maxitems' => 1
             ]
         ],
         'datetime' => [
@@ -365,7 +373,7 @@ $tx_geolocations_domain_model_location = [
                 'type' => 'input',
                 'size' => 16,
                 'max' => 20,
-                'eval' => 'date',
+                'eval' => 'date'
             ]
         ],
         'fe_user' => [
@@ -379,7 +387,7 @@ $tx_geolocations_domain_model_location = [
                 'enableMultiSelectFilterTextfield' => true,
                 'size' => 5,
                 'minitems' => 0,
-                'maxitems' => 999,
+                'maxitems' => 999
             ]
         ],
         'categories' => [
@@ -403,7 +411,7 @@ $tx_geolocations_domain_model_location = [
                         ],
                         'icon' => 'edit2.gif',
                         'popup_onlyOpenIfSelected' => 1,
-                        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
+                        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1'
                     ],
                     'add' => [
                         'type' => 'script',
@@ -440,7 +448,7 @@ $tx_geolocations_domain_model_location = [
                     --palette--;;paletteMedia,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
                     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;paletteAccess,'
-        ],
+        ]
     ],
     'palettes' => [
         'paletteAddress' => [
@@ -467,13 +475,20 @@ $tx_geolocations_domain_model_location = [
             'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,
                     endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel,
                     --linebreak--, fe_group;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:fe_group_formlabel',
-            'canNotCollapse' => true,
-        ],
+            'canNotCollapse' => true
+        ]
     ]
 ];
 $TCA['fe_users'] = array(
     'ctrl' => array(
-        'label' => 'name',
+        'label' => 'name'
     )
 );
+
+// Display zones of the selected country
+if (intval($extensionConfiguration['zonesByCountry'])) {
+    $tx_geolocations_domain_model_location['ctrl']['requestUpdate'] = 'country';
+    $tx_geolocations_domain_model_location['columns']['zone']['config']['foreign_table_where'] = 'AND zn_country_uid=\'###REC_FIELD_country###\' ORDER BY static_country_zones.zn_name_local';
+}
+
 return $tx_geolocations_domain_model_location;

@@ -1,4 +1,8 @@
-# cat=basic//1; type=string; label=apiKey
+# cat=basic//1; type=string; label=API Key: Your personal google-maps API-key
 apiKey =
-# cat=basic//2; type=boolean; label=Enable backend module
+# cat=basic//1; type=string; label=Server Key: Your personal google-maps Server-Key (https://developers.google.com/maps/documentation/geocoding/get-api-key)
+serverKey =
+# cat=basic//2; type=boolean; label=Enable backend module: If enabled, a backend module for easier administration of the geolocation-entries will be shown.
 enableBackendModule = 0
+# cat=basic//2; type=boolean; label=Show zones by country: If enabled, the dropdown in the backend forms will show only zones/states/provinces belonging to the selected country. This causes a reload if the country is changed, but it will drastically reduce the amount of loaded options.
+zonesByCountry = 1

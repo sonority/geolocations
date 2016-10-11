@@ -213,7 +213,7 @@ Gl = {
 	 * @returns {void}
 	 */
 	initialize: function () {
-		console.info('Gl::initialize()');
+		//console.info('Gl::initialize()');
 
 		if (Gl.initializeGlobalElements()) {
 			Gl.initializeListOptions();
@@ -233,7 +233,7 @@ Gl = {
 	 * @returns {Boolean}
 	 */
 	initializeGlobalElements: function () {
-		console.info('Gl::initializeGlobalElements()');
+		//console.info('Gl::initializeGlobalElements()');
 
 		/**
 		 * Common elements
@@ -296,7 +296,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	initializeListOptions: function () {
-		console.info('Gl::initializeListOptions()');
+		//console.info('Gl::initializeListOptions()');
 
 		// Get configuration values from list-container
 		Gl.lO = {
@@ -309,7 +309,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	initializeList: function () {
-		console.info('Gl::initializeList()');
+		//console.info('Gl::initializeList()');
 
 		// Set links to all listed location records
 		if (Gl.lO.clickMode) {
@@ -332,7 +332,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	initializeMapOptions: function () {
-		console.info('Gl::initializeMapOptions()');
+		//console.info('Gl::initializeMapOptions()');
 
 		if (Gl.elMapContainer) {
 			Gl.mO = {};
@@ -451,7 +451,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	initializeMap: function () {
-		console.info('Gl::initializeMap()');
+		//console.info('Gl::initializeMap()');
 
 		// Initialize map if canvas is available
 		if (Gl.mO && Gl.elMapContainer && Gl.elMapCanvas && Gl.mO.defaults) {
@@ -494,7 +494,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	initializeSearchOptions: function () {
-		console.info('Gl::initializeSearchOptions()');
+		//console.info('Gl::initializeSearchOptions()');
 
 		if (Gl.elSearchContainer) {
 			// Get configuration values from search-container
@@ -538,7 +538,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	initializeSearch: function () {
-		console.info('Gl::initializeSearch()');
+		//console.info('Gl::initializeSearch()');
 
 		if (Gl.sO && Gl.sO.searchObject.length && Gl.elSearchContainer) {
 			if (Gl.elFieldAddress) {
@@ -567,7 +567,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	listSetLocationMarkers: function () {
-		console.info('Gl::listSetLocationMarkers()');
+		//console.info('Gl::listSetLocationMarkers()');
 
 		// Reset all previously set markers
 		Gl.mapClearMarkers();
@@ -621,7 +621,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	listUnveilRecord: function () {
-		console.info('Gl::listUnveilRecord()');
+		//console.info('Gl::listUnveilRecord()');
 
 		$(this).find(Gl.locationBodyName).fadeToggle();
 	},
@@ -631,7 +631,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	listShowInMap: function () {
-		console.info('Gl::listShowInMap()');
+		//console.info('Gl::listShowInMap()');
 
 		var latLng = Gl.getLatLng($(this).data('latitude'), $(this).data('longitude'));
 		// Center to the given coordinates
@@ -654,7 +654,7 @@ Gl = {
 	 * @private
 	 */
 	searchSetAutocompleter: function () {
-		console.info('Gl::searchSetAutocompleter()');
+		//console.info('Gl::searchSetAutocompleter()');
 
 		var options = {};
 		// Set the region type
@@ -690,7 +690,7 @@ Gl = {
 	 * @private
 	 */
 	searchSetGeolocation: function () {
-		console.info('Gl::searchSetGeolocation()');
+		//console.info('Gl::searchSetGeolocation()');
 
 		if (!!navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(function (position) {
@@ -712,7 +712,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchSetTypeToggle: function () {
-		console.info('Gl::searchSetTypeToggle()');
+		//console.info('Gl::searchSetTypeToggle()');
 
 		// Disable buttons per default
 		if (Gl.elButtonRadial) {
@@ -746,7 +746,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchSetButtonsAndElements: function () {
-		console.info('Gl::searchSetButtonsAndElements()');
+		//console.info('Gl::searchSetButtonsAndElements()');
 
 		if (Gl.elFieldsetRadial) {
 			if (Gl.elFieldKeyword) {
@@ -801,7 +801,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchClearField: function () {
-		console.info('Gl::searchClearField()');
+		//console.info('Gl::searchClearField()');
 
 		$(this).siblings('input').val('').focus();
 		$(this).parent().parent().find('button').attr('disabled', true);
@@ -812,7 +812,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchRadiusChanged: function () {
-		console.info('Gl::searchRadiusChanged()');
+		//console.info('Gl::searchRadiusChanged()');
 
 		if (Gl.sO.perimeter) {
 			if (Gl.perimeterCircle) {
@@ -831,7 +831,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchCheckInput: function () {
-		console.info('Gl::searchCheckInput()');
+		//console.info('Gl::searchCheckInput()');
 
 		if ($(this).val().length < 3) {
 			Gl.elButtonFulltext.prop('disabled', true);
@@ -847,7 +847,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchToggleFieldset: function (fieldSet, enable) {
-		console.info('Gl::searchToggleFieldset()');
+		//console.info('Gl::searchToggleFieldset()');
 
 		if (fieldSet.length) {
 			if (enable) {
@@ -863,13 +863,13 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchStartRadial: function () {
-		console.info('Gl::searchStartRadial()');
+		//console.info('Gl::searchStartRadial()');
 
 		if (Gl.latLng) {
 			var addParams = {
 				searchType: 'radial',
 				latitude: Gl.latLng.lat(), longitude: Gl.latLng.lng(),
-				radius: Gl.elFieldRadius.val(),
+				radius: Gl.elFieldRadius.val()
 			};
 			Gl.searchAjax(Gl.searchGetRequest(addParams), Gl.searchAjaxReturned, Gl.elFieldsetRadial);
 		}
@@ -880,7 +880,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchStartFulltext: function () {
-		console.info('Gl::searchStartFulltext()');
+		//console.info('Gl::searchStartFulltext()');
 
 		// Reset positionmarker and perimeter
 		if (Gl.positionMarker) {
@@ -907,7 +907,7 @@ Gl = {
 	 * @returns {Gl.searchGetRequest.requestParameter}
 	 */
 	searchGetRequest: function (addParams) {
-		console.info('Gl::searchGetRequest()');
+		//console.info('Gl::searchGetRequest()');
 
 		var requestParameter = {
 			tx_geolocations_pi1: {
@@ -926,7 +926,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchAjax: function (requestParameter, callback, fieldSet) {
-		console.info('Gl::searchAjax()');
+		//console.info('Gl::searchAjax()');
 
 		// Disable fieldset
 		Gl.mapToggleLoadingOverlay(true);
@@ -955,7 +955,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	searchAjaxReturned: function (data, fieldSet) {
-		console.info('Gl::searchAjaxReturned()');
+		//console.info('Gl::searchAjaxReturned()');
 
 		if (data) {
 			Gl.elListContainer.html(data);
@@ -971,7 +971,7 @@ Gl = {
 	 * @returns {Gl.getCheckedCategories.categories|Array}
 	 */
 	getCheckedCategories: function () {
-		console.info('Gl::getCheckedCategories()');
+		//console.info('Gl::getCheckedCategories()');
 
 		var categories = [];
 		$("#search-categories input[type='checkbox']:checked").each(function () {
@@ -988,7 +988,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	mapCustomControls: function () {
-		console.info('Gl::mapCustomControls()');
+		//console.info('Gl::mapCustomControls()');
 
 		// Create the DIV to hold the control
 		var controlDiv = document.createElement('div');
@@ -1013,7 +1013,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	mapToggleCustomControls: function (enable) {
-		console.info('Gl::mapToggleCustomControls()');
+		//console.info('Gl::mapToggleCustomControls()');
 
 		if (enable === true) {
 			// Enable
@@ -1047,7 +1047,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	mapToggleOptions: function (element) {
-		console.info('Gl::mapToggleOptions()');
+		//console.info('Gl::mapToggleOptions()');
 
 		if (Gl.map.get(element)) {
 			Gl.map.set(element, false);
@@ -1062,7 +1062,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	mapToggleLoadingOverlay: function (enable) {
-		console.info('Gl::mapToggleLoadingOverlay()');
+		//console.info('Gl::mapToggleLoadingOverlay()');
 
 		if (Gl.elMapLoadingOverlay) {
 			if (enable) {
@@ -1079,7 +1079,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	mapUpdate: function (latLng) {
-		console.info('Gl::mapUpdate()');
+		//console.info('Gl::mapUpdate()');
 
 		// Set current value to global latLng
 		Gl.latLng = latLng;
@@ -1149,7 +1149,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	mapClearMarkers: function () {
-		console.info('Gl::mapClearMarkers()');
+		//console.info('Gl::mapClearMarkers()');
 
 		if (Gl.markers && Gl.markers.length > 0) {
 			for (var i = 0; i < Gl.markers.length; i++) {
@@ -1170,7 +1170,7 @@ Gl = {
 	 * @returns {undefined}
 	 */
 	reverseGeocode: function (search, fieldName, callback) {
-		console.info('Gl::reverseGeocode()');
+		//console.info('Gl::reverseGeocode()');
 
 		var geocoder = new google.maps.Geocoder();
 		if (geocoder) {
@@ -1197,7 +1197,7 @@ Gl = {
 		}
 	},
 	reverseGeocodeReturned: function (fieldValue, results) {
-		console.info('Gl::reverseGeocodeReturned()');
+		//console.info('Gl::reverseGeocodeReturned()');
 
 		if (results) {
 			Gl.latLng = results[0].geometry.location;
@@ -1219,7 +1219,7 @@ Gl = {
 	 * @returns {google.maps.LatLng}
 	 */
 	getLatLng: function (latitude, longitude) {
-		console.info('Gl::getLatLng()');
+		//console.info('Gl::getLatLng()');
 
 		if (!latitude || latitude === '') {
 			latitude = 0;
@@ -1239,7 +1239,7 @@ Gl = {
 	 * @private
 	 */
 	getBaseUrl: function () {
-		console.info('Gl::getBaseUrl()');
+		//console.info('Gl::getBaseUrl()');
 
 		var baseUrl = $('base');
 		if (baseUrl.length > 0 && baseUrl !== '/') {
@@ -1249,9 +1249,9 @@ Gl = {
 			}
 		} else {
 			if (window.location.protocol !== 'https:') {
-				baseUrl = 'http://' + window.location.hostname;
+				baseUrl = 'http://' + window.location.hostname + '/';
 			} else {
-				baseUrl = 'https://' + window.location.hostname;
+				baseUrl = 'https://' + window.location.hostname + '/';
 			}
 		}
 		return baseUrl;
@@ -1321,19 +1321,19 @@ Gl = {
 
 jQuery(window).load(function ($) {
 	'use strict';
-	console.info('Start Geolocations');
+	//console.info('Start Geolocations');
 
 	// Fix bug where dragging does not work on some touch-devices
 	// http://stackoverflow.com/questions/28661844/touch-events-not-working-with-google-maps-in-angular/31023464
-	function fixTouchBug() {
-		return true === ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch);
-	}
+	//function fixTouchBug() {
+	//	return true === ('ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch);
+	//}
 	// check if google-maps-api is available
 	if (typeof google === 'object' && typeof google.maps === 'object') {
-		if (fixTouchBug() === true) {
-			navigator = navigator || {};
-			navigator.msMaxTouchPoints = navigator.msMaxTouchPoints || 2;
-		}
+		//if (fixTouchBug() === true) {
+		//	navigator = navigator || {};
+		//	navigator.msMaxTouchPoints = navigator.msMaxTouchPoints || 2;
+		//}
 		// Start Geolocations
 		Gl.initialize();
 	}

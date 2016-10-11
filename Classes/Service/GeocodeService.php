@@ -18,17 +18,15 @@ namespace Sonority\Geolocations\Service;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * calculate the geo coordinates of an address, using the googe geocoding
- * API, an API key is needed, as this is a server-side process.
+ * Determines the coordinates (latitude/longitude) of a given address, using the "Google Maps Geocoding API".
+ *
+ * If you provide a key, it needs to be the "Server Key", not the "API Key" as this is a server-side process.
+ * https://developers.google.com/maps/documentation/geocoding/get-api-key
+ *
+ * @package geolocations
  */
 class GeocodeService
 {
-
-    /**
-     *
-     * @var string
-     */
-    protected $apikey = '';
 
     /**
      *
@@ -37,73 +35,107 @@ class GeocodeService
     protected $cacheTime = 7776000;
 
     /**
-     * Base URL to fetch the coordinates (latitude, longitude of a address string).
+     * Base URL to fetch the coordinates from (latitude, longitude of a address string).
+     *
+     * @var string
      */
-    protected $geocodingUrl = 'https://maps.googleapis.com/maps/api/geocode/json?sensor=false';
+    protected $geocodingUrl = '//maps.googleapis.com/maps/api/geocode/json';
 
     /**
-     * Sets the google maps API-key and the language
+     * Languages provided by google: https://developers.google.com/maps/faq?hl=de#languagesupport
      *
-     * @param string $apikey (optional) the API key from google, if empty, the default from the configuration is taken
-     * @param string $language
+     * @var array
      */
-    public function __construct($apikey = null, $language = null)
+    protected $availableLanguages = [
+        'ar', 'bg', 'bn', 'ca', 'cs', 'da', 'de', 'el', 'en', 'en-AU', 'en-GB', 'es', 'eu', 'eu',
+        'fa', 'fi', 'fil', 'fr', 'gl', 'gu', 'hi', 'hr', 'hu', 'id', 'it', 'iw', 'ja', 'kn', 'ko',
+        'lt', 'lv', 'ml', 'mr', 'nl', 'no', 'pl', 'pt', 'pt-BR', 'pt-PT', 'ro', 'ru', 'sk', 'sl',
+        'sr', 'sv', 'ta', 'te', 'th', 'tl', 'tr', 'uk', 'vi', 'zh-CN', 'zh-TW'
+    ];
+
+    /**
+     * Sets the google maps API-key and the language.
+     *
+     * @param string $appendParameter URL-parameter which will be appended to the geocoding-URL
+     * @param string $serverKey The server-key to access the google-service, if empty, the default from the configuration is taken
+     * @param string $languageKey Language of the result
+     * @param integer $cacheTime Sets the caching time of a geocoding result
+     * @return void
+     */
+    public function __construct($appendParameter = null, $serverKey = null, $languageKey = null, $cacheTime = null)
     {
+        /*
+          if (GeneralUtility::getIndpEnv('TYPO3_SSL')) {
+          $protocol = 'https:';
+          } else {
+          $protocol = 'http:';
+          }
+         */
         // Get extensions configuration
-        if ($apikey === null) {
-            $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['geolocations']);
-            if (!empty($extConf['apiKey'])) {
-                $this->apikey = $extConf['apiKey'];
-                $this->geocodingUrl .= '&key=' . $extConf['apiKey'];
-            }
+        $extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['geolocations']);
+        // Append server-key as URL-parameter
+        $key = $serverKey ? $serverKey : (!empty($extConf['serverKey']) ? $extConf['serverKey'] : null);
+        if ($key) {
+            $urlParameter[] = 'key=' . preg_replace('/[^\da-z_-]/i', '', $key);
         }
-        if ($language !== null) {
-            $this->geocodingUrl .= '&language=' . $language;
+        // Append language-key as URL-parameter
+        $language = $languageKey ? $languageKey : $GLOBALS['BE_USER']->uc['lang'];
+        if ($language && in_array($language, $this->availableLanguages)) {
+            $urlParameter[] = 'language=' . $language;
+        }
+        // Append additional URL-parameters
+        if ($appendParameter) {
+            $urlParameter[] = preg_replace('/[^\[\]\da-z&_-]/i', '', $appendParameter);
+        }
+        $this->geocodingUrl = (GeneralUtility::getIndpEnv('TYPO3_SSL') ? 'https' : 'http') . ':' . $this->geocodingUrl . '?';
+        if (count($urlParameter) > 0) {
+            $this->geocodingUrl .= implode('&', $urlParameter);
+        }
+        // Overwrite cachetime
+        if ($cacheTime) {
+            $this->cacheTime = intval($cacheTime);
         }
     }
 
     /**
-     * Reverse geocode addresses to coordinates
+     * Reverse geocode a given address to coordinates
      *
-     * @param $address
-     *
+     * @param string $address
      * @return array an array with latitude, longitude and place_id
      */
-    public function getCoordinatesForAddress($address = '')
+    public function getCoordinatesForAddress($address = '', $cache = true)
     {
-        $results = null;
-        $address = trim($address);
-
         if ($address) {
             $cacheObject = $this->initializeCache();
             // Create the cache key
             $cacheKey = 'geolocations-' . strtolower(str_replace(' ', '-', preg_replace('/[^0-9a-zA-Z ]/m', '', $address)));
             // Not in cache yet
-            if (!$cacheObject->has($cacheKey)) {
-                $geocodingUrl = $this->geocodingUrl . '&address=' . urlencode($address);
-                $results = json_decode(GeneralUtility::getUrl($geocodingUrl, true));
-
-                if (count($results['results']) > 0) {
-                    $record = reset($results['results']);
-                    $results = array(
-                        'latitude' => $record['geometry']['location']['lat'],
-                        'longitude' => $record['geometry']['location']['lng'],
-                        'place_id' => $record['place_id'] ? $record['place_id'] : ''
-                    );
-                    // Store the result in cache and return
-                    $cacheObject->set($cacheKey, $results, array(), $this->cacheTime);
-                }
-                sleep(0.5);
-            } else {
+            if ($cache && $cacheObject->has($cacheKey)) {
                 $results = $cacheObject->get($cacheKey);
+            } else {
+                // Append address to geocoding-url
+                $geocodingUrl = $this->geocodingUrl . '&address=' . urlencode($address);
+                // Query geocoding-service
+                $results = json_decode(GeneralUtility::getUrl($geocodingUrl));
+                if ($results->status === 'OK') {
+                    $record = $results->results[0];
+                    $results = [
+                        'latitude' => $record->geometry->location->lat,
+                        'longitude' => $record->geometry->location->lng,
+                        'place_id' => $record->place_id ? $record->place_id : ''
+                    ];
+                    // Store the result in cache and return
+                    $cacheObject->set($cacheKey, $results, [], $this->cacheTime);
+                } else {
+                    $results = null;
+                }
             }
         }
-
         return $results;
     }
 
     /**
-     * Initializes the cache for the DB requests.
+     * Initializes the cache for the DB requests
      *
      * @return Cache Object
      */

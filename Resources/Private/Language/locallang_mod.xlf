@@ -16,8 +16,11 @@
 			<trans-unit id="module.overview" xml:space="preserve">
 				<source>Overview</source>
 			</trans-unit>
-			<trans-unit id="module.geocode" xml:space="preserve">
-				<source>Coordinates</source>
+			<trans-unit id="module.fillMissingCoordinates" xml:space="preserve">
+				<source>Fill missing coordinates</source>
+			</trans-unit>
+			<trans-unit id="module.geocodeAddress" xml:space="preserve">
+				<source>Test Google Maps API</source>
 			</trans-unit>
 
 			<trans-unit id="overview.title" xml:space="preserve">
@@ -27,29 +30,36 @@
 				<source>No Locations available.</source>
 			</trans-unit>
 
-			<trans-unit id="geocode.title" xml:space="preserve">
-				<source>Retrieve missing Coordinates</source>
+			<trans-unit id="fillMissingCoordinates.title" xml:space="preserve">
+				<source>Fill missing Coordinates</source>
 			</trans-unit>
-			<trans-unit id="geocode.count" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.count" xml:space="preserve">
 				<source>There are %1$d records with missing coordinates.</source>
 			</trans-unit>
-			<trans-unit id="geocode.ok" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.ok" xml:space="preserve">
 				<source>There are no records with missing coordinates.</source>
 			</trans-unit>
-			<trans-unit id="geocode.startGeocode" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.startGeocode" xml:space="preserve">
 				<source>Start geocoding</source>
 			</trans-unit>
-			<trans-unit id="geocode.js.confirmTitle" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.js.confirmTitle" xml:space="preserve">
 				<source>Geocode Locations</source>
 			</trans-unit>
-			<trans-unit id="geocode.js.geocodeLocations" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.js.geocodeLocations" xml:space="preserve">
 				<source>Do you really want to add missing coordinates for ALL Locations?</source>
 			</trans-unit>
-			<trans-unit id="geocode.js.backgroundProcessRunning" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.js.backgroundProcessRunning" xml:space="preserve">
 				<source>Add coordinates: ###%</source>
 			</trans-unit>
-			<trans-unit id="geocode.js.backgroundProcessFinished" xml:space="preserve">
+			<trans-unit id="fillMissingCoordinates.js.backgroundProcessFinished" xml:space="preserve">
 				<source>Retrieving coordinates done!</source>
+			</trans-unit>
+
+			<trans-unit id="geocodeAddress.address" xml:space="preserve">
+				<source>Address, ZIP City</source>
+			</trans-unit>
+			<trans-unit id="geocodeAddress.geocodeAddress" xml:space="preserve">
+				<source>Geocode addresse</source>
 			</trans-unit>
 
 			<trans-unit id="tx_geolocations_domain_model_location.title" xml:space="preserve">

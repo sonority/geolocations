@@ -6,6 +6,12 @@
 			<trans-unit id="pi1_title" xml:space="preserve">
 				<source>Geolocations</source>
 			</trans-unit>
+			<trans-unit id="pi1_wiz_description" xml:space="preserve">
+				<source>Geolocations</source>
+			</trans-unit>
+			<trans-unit id="locations-folder" xml:space="preserve">
+				<source>Geolocations</source>
+			</trans-unit>
 
 			<trans-unit id="palette.paletteAddress" xml:space="preserve">
 				<source>Address data</source>

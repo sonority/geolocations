@@ -18,3 +18,9 @@
 	float: none;
 	background-color: #adf;
 }
+#address-input {
+	width: 50%;
+}
+#geocodeAdressOutput {
+	display: none;
+}

@@ -7,6 +7,14 @@
 				<source>Geolocations</source>
 				<target>Geolocations</target>
 			</trans-unit>
+			<trans-unit id="pi1_wiz_description" xml:space="preserve" approved="yes">
+				<source>Adds the Geolocations-plugin.</source>
+				<target>Fügt das Geolocations-Plugin hinzu.</target>
+			</trans-unit>
+			<trans-unit id="locations-folder" xml:space="preserve" approved="yes">
+				<source>Geolocations</source>
+				<target>Geolocations</target>
+			</trans-unit>
 
 			<trans-unit id="palette.paletteAddress" xml:space="preserve" approved="yes">
 				<source>Address data</source>

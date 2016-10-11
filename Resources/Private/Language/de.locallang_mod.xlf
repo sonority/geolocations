@@ -20,9 +20,13 @@
 				<source>Overview</source>
 				<target>Übersicht</target>
 			</trans-unit>
-			<trans-unit id="module.geocode" xml:space="preserve" approved="yes">
-				<source>Coordinates</source>
-				<target>Koordinaten</target>
+			<trans-unit id="module.fillMissingCoordinates" xml:space="preserve" approved="yes">
+				<source>Fill missing coordinates</source>
+				<target>Ergänze fehlende Koordinaten</target>
+			</trans-unit>
+			<trans-unit id="module.geocodeAddress" xml:space="preserve" approved="yes">
+				<source>Test Google Maps API</source>
+				<target>Teste Google Maps API</target>
 			</trans-unit>
 
 			<trans-unit id="overview.title" xml:space="preserve" approved="yes">
@@ -34,37 +38,46 @@
 				<target>Keine Standorte an dieser Stelle verfügbar. Bitte wählen Sie eine Seite die Standort-Einträge beinhaltet.</target>
 			</trans-unit>
 
-			<trans-unit id="geocode.title" xml:space="preserve" approved="yes">
-				<source>Retrieve missing Coordinates</source>
-				<target>Aktualisiere fehlende Koordinaten</target>
+			<trans-unit id="fillMissingCoordinates.title" xml:space="preserve" approved="yes">
+				<source>Fill missing coordinates of locations</source>
+				<target>Ergänze fehlende Koordinaten von Standorten</target>
 			</trans-unit>
-			<trans-unit id="geocode.count" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.count" xml:space="preserve" approved="yes">
 				<source>There are %1$d records with missing coordinates.</source>
 				<target>Es wurden %1$d Einträge mit fehlenden Koordinaten gefunden.</target>
 			</trans-unit>
-			<trans-unit id="geocode.ok" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.ok" xml:space="preserve" approved="yes">
 				<source>There are no records with missing coordinates.</source>
 				<target>Es wurden keine Einträge mit fehlenden Koordinaten gefunden.</target>
 			</trans-unit>
-			<trans-unit id="geocode.startGeocode" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.startGeocode" xml:space="preserve" approved="yes">
 				<source>Start Geocoding</source>
 				<target>Starte Geocoding</target>
 			</trans-unit>
-			<trans-unit id="geocode.js.confirmTitle" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.js.confirmTitle" xml:space="preserve" approved="yes">
 				<source>Geocode Locations</source>
 				<target>Geocode Standorte</target>
 			</trans-unit>
-			<trans-unit id="geocode.js.geocodeLocations" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.js.geocodeLocations" xml:space="preserve" approved="yes">
 				<source>Do you really want to add missing coordinates for ALL Locations?</source>
 				<target>Wollen Sie die fehlenden Koordinaten ALLER Standorte ergänzen?</target>
 			</trans-unit>
-			<trans-unit id="geocode.js.backgroundProcessRunning" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.js.backgroundProcessRunning" xml:space="preserve" approved="yes">
 				<source>Add coordinates: ###%</source>
 				<target>Ergänze Koordinaten: ###%</target>
 			</trans-unit>
-			<trans-unit id="geocode.js.backgroundProcessFinished" xml:space="preserve" approved="yes">
+			<trans-unit id="fillMissingCoordinates.js.backgroundProcessFinished" xml:space="preserve" approved="yes">
 				<source>Retrieving coordinates done!</source>
 				<target>Empfang der Koordinaten abgeschlossen!</target>
+			</trans-unit>
+
+			<trans-unit id="geocodeAddress.address" xml:space="preserve" approved="yes">
+				<source>Address, ZIP City</source>
+				<target>Adresse, Postleitzahl Stadt</target>
+			</trans-unit>
+			<trans-unit id="geocodeAddress.geocodeAddress" xml:space="preserve" approved="yes">
+				<source>Geocode addresse</source>
+				<target>Adresse geokodieren</target>
 			</trans-unit>
 
 			<trans-unit id="tx_geolocations_domain_model_location.title" xml:space="preserve" approved="yes">

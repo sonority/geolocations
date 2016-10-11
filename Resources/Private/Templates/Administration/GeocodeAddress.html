@@ -1,0 +1,36 @@
+{namespace s=Sonority\Geolocations\ViewHelpers}
+{namespace c=TYPO3\CMS\Core\ViewHelpers}
+
+<f:layout name="Backend" />
+
+<f:section name="content">
+    <f:if condition="{showMessage}">
+        <script>
+			TYPO3.Flashmessage.display(
+					TYPO3.Severity.ok,
+					'<f:translate key="{messageTitleKey}" />',
+					'<f:translate key="{messageContentKey}" />',
+					5
+					);
+        </script>
+    </f:if>
+
+	<h1><f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocodeAddress.title"/></h1>
+	<div class="form-group">
+		<f:form.textfield name="tx_geolocations_mod[address]" id="address-input" placeholder="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocodeAddress.address')}" />
+	</div>
+	<div class="form-group">
+		<a id="geocodeStart" class="btn btn-default" href="#">
+			<c:icon identifier="actions-download" />
+			<f:translate key="LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:geocodeAddress.geocodeAddress" />
+		</a>
+	</div>
+	<pre id="geocodeAdressOutput"></pre>
+
+	<script type="text/javascript">
+		var tx_geolocations_strings = {
+			geocodeAddressUrl: '<f:uri.action action="ajaxGeocodeAddress"/>'
+		};
+	</script>
+
+</f:section>

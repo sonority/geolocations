@@ -67,33 +67,6 @@ class AdministrationController extends ActionController
     protected $persistenceManager;
 
     /**
-     * Initialize action
-     *
-     * @return void
-     */
-    public function initializeAction()
-    {
-        if ($this->settings === null) {
-            $this->redirect('settingsError');
-        }
-        $this->settings['pidList'] = (int) GeneralUtility::_GET('id');
-    }
-
-    /**
-     * List action for backend module
-     *
-     * @return void
-     */
-    public function overviewAction()
-    {
-        $demand = $this->createDemandObjectFromSettings($this->settings);
-        // Set current action & class
-        $demand->setActionAndClass(__METHOD__, __CLASS__);
-        $locationRecords = $this->locationRepository->findDemanded($demand, false);
-        $this->view->assign('locations', $locationRecords);
-    }
-
-    /**
      * Create the demand object which defines which records will get shown
      *
      * @param array $settings
@@ -122,11 +95,38 @@ class AdministrationController extends ActionController
     }
 
     /**
-     * Example for a long process (just loops 20 seconds). Returns TRUE if process is finished
+     * Initialize action
      *
-     * @return bool TRUE if process is finished
+     * @return void
      */
-    public function geocodeAction()
+    public function initializeAction()
+    {
+        if ($this->settings === null) {
+            $this->redirect('settingsError');
+        }
+        $this->settings['pidList'] = (int) GeneralUtility::_GET('id');
+    }
+
+    /**
+     * Overview action for backend module
+     *
+     * @return void
+     */
+    public function overviewAction()
+    {
+        $demand = $this->createDemandObjectFromSettings($this->settings);
+        // Set current action & class
+        $demand->setActionAndClass(__METHOD__, __CLASS__);
+        $locationRecords = $this->locationRepository->findDemanded($demand, false);
+        $this->view->assign('locations', $locationRecords);
+    }
+
+    /**
+     * Geocode a single address
+     *
+     * @return void
+     */
+    public function fillMissingCoordinatesAction()
     {
         $locationRecords = $this->locationRepository->findAllMissingCoordinates();
         $count = count($locationRecords);
@@ -134,15 +134,50 @@ class AdministrationController extends ActionController
     }
 
     /**
-     * Example for a long process (just loops 20 seconds). Returns TRUE if process is finished
+     * Overview action for backend module
+     *
+     * @return void
+     */
+    public function geocodeAddressAction()
+    {
+
+    }
+
+    /*
+     *
+     * AJAX-Functions
+     *
+     */
+
+    /**
+     * Geocode a single address at AJAX-request
+     *
+     * @return void
+     */
+    public function ajaxGeocodeAddressAction()
+    {
+        $address = GeneralUtility::_GP('address');
+        if (!empty($address)) {
+            $geocodeService = GeneralUtility::makeInstance(GeocodeService::class);
+            $coordinates = $geocodeService->getCoordinatesForAddress(trim($address), false);
+            if (is_array($coordinates)) {
+                return json_encode($coordinates);
+            }
+        }
+        return json_encode('');
+    }
+
+    /**
+     * Starts the geocoding-process in the background and fills all the missing coordinates
      *
      * @return bool TRUE if process is finished
      */
-    public function startGeocodeProcessAction()
+    public function ajaxStartGeocodeProcessAction()
     {
         $locationRecords = $this->locationRepository->findAllMissingCoordinates();
         $needPersistence = false;
         $count = count($locationRecords);
+        $geocodeService = GeneralUtility::makeInstance(GeocodeService::class);
 
         $i = 1;
         foreach ($locationRecords as $location) {
@@ -158,8 +193,7 @@ class AdministrationController extends ActionController
                     $address .= ' ' . $city;
                 }
             }
-            $geocodeService = GeneralUtility::makeInstance(GeocodeService::class, null, $GLOBALS['BE_USER']->uc['lang']);
-            $coordinates = $geocodeService->getCoordinatesForAddress($address);
+            $coordinates = $geocodeService->getCoordinatesForAddress(trim($address));
             if (is_array($coordinates) && !empty($coordinates['latitude']) && !empty($coordinates['longitude'])) {
                 $needPersistence = true;
                 $location->setLatitude($coordinates['latitude']);
@@ -182,12 +216,11 @@ class AdministrationController extends ActionController
         if ($needPersistence) {
             $this->persistenceManager->persistAll();
         }
-
-        // Reset the counter in session variable to 0
+        // Reset the counter in session variable to -1 if process is done
         session_start();
         $_SESSION['processDone'] = -1;
         session_write_close();
-        return json_encode(TRUE);
+        return json_encode(true);
     }
 
     /**
@@ -195,7 +228,7 @@ class AdministrationController extends ActionController
      *
      * @return int Status of the process in percent
      */
-    public function checkGeocodeProcessAction()
+    public function ajaxCheckGeocodeProcessAction()
     {
         session_start();
         if (!isset($_SESSION['processDone'])) {

@@ -66,7 +66,7 @@ class GeoCodeElement
         $pageRenderer->addJsFile('//maps.google.com/maps/api/js?key=' . $extConf['apiKey'] . '&libraries=places', null, false,
             true, '', true);
         $pageRenderer->addJsFile($extRelPath . 'Resources/Public/JavaScript/geolocations_tca.min.js');
-        $pageRenderer->addCssFile($extRelPath . 'Resources/Public/Css/geolocations_tca.css');
+        $pageRenderer->addCssFile($extRelPath . 'Resources/Public/Css/geolocations_tca.min.css');
         // Add inline-language for javascript
         $pageRenderer->addInlineLanguageLabelFile('EXT:' . $extKey . '/Resources/Private/Language/locallang.xlf');
 

@@ -3,9 +3,9 @@
 
 <f:be.container>
 	<f:be.pageRenderer includeCssFiles="{
-		1: '../typo3conf/ext/geolocations/Resources/Public/Css/geolocations_be.css'
+		1: '../typo3conf/ext/geolocations/Resources/Public/Css/geolocations_mod.css'
 	}" includeJsFiles="{
-		2: '../typo3conf/ext/geolocations/Resources/Public/JavaScript/geolocations_be.min.js'
+		2: '../typo3conf/ext/geolocations/Resources/Public/JavaScript/geolocations_mod.js'
 	}" loadJQuery="1" loadExtJsTheme="0"/>
 	<div class="typo3-fullDoc">
 		<div id="typo3-docheader">
@@ -14,7 +14,8 @@
 					<f:be.buttons.csh />
 					<f:be.menus.actionMenu>
 						<f:be.menus.actionMenuItem label="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:module.overview')}" controller="Administration" action="overview" />
-						<f:be.menus.actionMenuItem label="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:module.geocode')}" controller="Administration" action="geocode" />
+						<f:be.menus.actionMenuItem label="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:module.fillMissingCoordinates')}" controller="Administration" action="fillMissingCoordinates" />
+						<f:be.menus.actionMenuItem label="{f:translate(key:'LLL:EXT:geolocations/Resources/Private/Language/locallang_mod.xlf:module.geocodeAddress')}" controller="Administration" action="geocodeAddress" />
 					</f:be.menus.actionMenu>
 				</div>
 				<div class="right">

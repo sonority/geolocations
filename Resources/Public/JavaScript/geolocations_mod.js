@@ -4,13 +4,12 @@ var processButton = null;
 ;
 (function ($) {
 	$(document).ready(function ($) {
-		// Oon page load...
+		// On page load...
 		$(function () {
 			progressbar = $("#progressbar");
 			processButton = $("#start");
 			processButton.attr({disabled: true});
 			getStatus(true);
-
 		});
 		function setProgress(progress) {
 			var inner = $('.progress .progress-bar');
@@ -36,7 +35,6 @@ var processButton = null;
 				async: true,
 				success: function (data) {
 					var percentage = parseInt(data);
-					console.log('percentage: ' + percentage);
 					if (percentage >= 0) {
 						progressbar.show();
 						if (percentage < 100 && backgroundProcess) {
@@ -71,6 +69,23 @@ var processButton = null;
 					top.TYPO3.Modal.dismiss();
 				});
 			}
+		});
+		$("#geocodeStart").click(function (event) {
+			var addParams = {
+				address: $('#address-input').val()
+			};
+			$.ajax({
+				url: tx_geolocations_strings.geocodeAddressUrl,
+				data: addParams,
+				type: 'get',
+				dataType: 'json',
+				cache: false,
+				async: true,
+				success: function (data) {
+					str = JSON.stringify(data, null, 4);
+					$('#geocodeAdressOutput').text(str).show();
+				}
+			});
 		});
 	});
 })(TYPO3.jQuery || jQuery);

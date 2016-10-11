@@ -11,8 +11,8 @@ plugin.tx_geolocations {
 
 	settings {
 		# cat=plugin.tx_geolocations/file; type=string; label=Path to CSS file
-		cssFile = EXT:geolocations/Resources/Public/Css/geolocations_fe.css
-		jsFile = EXT:geolocations/Resources/Public/JavaScript/Geolocations.min.js
+		cssFile = EXT:geolocations/Resources/Public/Css/geolocations_fe.min.css
+		jsFile = EXT:geolocations/Resources/Public/JavaScript/geolocations_fe.min.js
 		searchFields = title,bodytext,address,zip,city
 		search {
 			autocompleter {

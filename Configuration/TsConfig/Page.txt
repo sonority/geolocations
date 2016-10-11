@@ -1,14 +1,30 @@
+mod.wizards.newContentElement.wizardItems {
+	plugins {
+		elements {
+			list {
+				title = LLL:EXT:geolocations/Resources/Private/Language/locallang_be.xlf:pi1_title
+				description = LLL:EXT:geolocations/Resources/Private/Language/locallang_be.xlf:pi1_wiz_description
+				iconIdentifier = ext-geolocations-wizard-icon
+				tt_content_defValues {
+					CType = list
+					list_type = geolocations_pi1
+				}
+			}
+		}
+	}
+}
+
 TCEFORM {
 	tx_geolocations_domain_model_location {
 		fe_user {
-			# Set this to the UID of the fe_group from which users should be selected
+			# Set this to the UID of the fe_group from which users should be selected (empty = show all)
 			PAGE_TSCONFIG_ID =
 		}
 		status {
 			addItems {
-				#1 = Status 1
-				#2 = Status 2
-				#3 = Status 3
+				1 = Status 1
+				2 = Status 2
+				3 = Status 3
 			}
 		}
 	}
@@ -16,7 +32,9 @@ TCEFORM {
 
 TCAdefaults {
 	tx_geolocations_domain_model_location {
+		# The ID of static_country_zones
 		zone = 95
-		country = 40
+		# The ID of static_countries
+		country = 13
 	}
 }
