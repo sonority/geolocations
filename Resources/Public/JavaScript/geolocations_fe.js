@@ -749,7 +749,7 @@ Gl = {
 		//console.info('Gl::searchSetButtonsAndElements()');
 
 		if (Gl.elFieldsetRadial) {
-			if (Gl.elFieldKeyword) {
+			if (Gl.elFieldAddress) {
 				Gl.elFieldAddress.on('input', function () {
 					Gl.addressFieldChangedManually = true;
 					if ($(this).val().length < 3) {
