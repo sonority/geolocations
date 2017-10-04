@@ -200,6 +200,7 @@ class LocationController extends BaseController
             $apiParams[] = 'key=' . $this->extConf['apiKey'];
         }
         $apiParams[] = 'libraries=places';
+        $apiParams[] = 'language=' . $GLOBALS['TSFE']->tmpl->setup['config.']['language'];
         $pageRenderer->addJsFooterLibrary('google_maps_api', $googleApi . '?' . implode('&', $apiParams), null, false, true, '',
             true, '|', false);
     }
