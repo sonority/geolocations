@@ -479,11 +479,11 @@ $tx_geolocations_domain_model_location = [
         ]
     ]
 ];
-$TCA['fe_users'] = array(
-    'ctrl' => array(
+$TCA['fe_users'] = [
+    'ctrl' => [
         'label' => 'name'
-    )
-);
+    ]
+];
 
 // Display zones of the selected country
 if (intval($extensionConfiguration['zonesByCountry'])) {

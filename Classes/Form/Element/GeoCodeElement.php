@@ -87,21 +87,23 @@ class GeoCodeElement
         $size = MathUtility::forceIntegerInRange($config['size'] ? : $this->defaultInputWidth, $this->minimumInputWidth,
                 $this->maxInputWidth);
         $evalList = GeneralUtility::trimExplode(',', $config['eval'], true);
-        $classes = array();
-        $attributes = array();
+        $classes = [];
+        $attributes = [];
 
         foreach ($evalList as $func) {
             switch ($func) {
                 case 'required':
-                    $validationRules[] = array('type' => 'required');
+                    $validationRules[] = [
+                        'type' => 'required'
+                    ];
                     break;
             }
         }
-        $paramsList = array(
+        $paramsList = [
             'field' => $parameterArray['itemFormElName'],
             'evalList' => '',
             'is_in' => '',
-        );
+        ];
         // Set classes
         $classes[] = 'form-control';
         $classes[] = 't3js-clearable';

@@ -37,7 +37,9 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     public function findAll()
     {
         $query = $this->createQuery();
-        $query->setOrderings(Array('title' => QueryInterface::ORDER_ASCENDING));
+        $query->setOrderings([
+            'title' => QueryInterface::ORDER_ASCENDING
+        ]);
         return $query->execute();
     }
 
