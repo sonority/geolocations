@@ -395,33 +395,27 @@ $tx_geolocations_domain_model_location = [
                 'foreign_table' => 'tx_geolocations_domain_model_category',
                 'foreign_table_field' => 'tablenames',
                 'foreign_sortby' => 'sorting_foreign',
-                'wizards' => [
-                    '_PADDING' => 1,
-                    '_VERTICAL' => 1,
-                    'edit' => [
-                        'type' => 'popup',
-                        'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_edit',
-                        'module' => [
-                            'name' => 'wizard_edit'
-                        ],
-                        'icon' => 'edit2.gif',
-                        'popup_onlyOpenIfSelected' => 1,
-                        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1'
-                    ],
-                    'add' => [
-                        'type' => 'script',
-                        'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_create',
-                        'icon' => 'add.gif',
-                        'params' => [
-                            'table' => 'tx_mymap_domain_model_category',
+                /* Feature #81976: https://forge.typo3.org/issues/81976 */
+                /*
+                'fieldControl' => [
+                    'addRecord' => [
+                        'disabled' => false,
+                        'options' => [
                             'pid' => '###CURRENT_PID###',
-                            'setValue' => 'prepend'
-                        ],
-                        'module' => [
-                            'name' => 'wizard_add'
+                            'setValue' => 'prepend',
+                            'table' => 'tx_mymap_domain_model_category',
+                            'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_create'
+                        ]
+                    ],
+                    'editPopup' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_edit',
+                            'windowOpenParameters' => 'height=350,width=580,status=0,menubar=0,scrollbars=1'
                         ]
                     ]
                 ]
+                */
             ]
         ]
     ],
