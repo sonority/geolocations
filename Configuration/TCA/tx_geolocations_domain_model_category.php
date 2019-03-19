@@ -121,7 +121,6 @@ $tx_geolocations_domain_model_category = [
         'image' => [
             'label' => $fieldLanguageFilePrefix . 'tx_geolocations_domain_model_location.image',
             'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 [
@@ -132,6 +131,9 @@ $tx_geolocations_domain_model_category = [
                         'height' => '25c'
                     ]
                 ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true
+                ],
                 'foreign_types' => [
                     \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']]
                 ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
@@ -140,7 +142,6 @@ $tx_geolocations_domain_model_category = [
         'marker' => [
             'label' => $fieldLanguageFilePrefix . 'tx_geolocations_domain_model_category.marker',
             'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'marker',
                 [
@@ -151,6 +152,9 @@ $tx_geolocations_domain_model_category = [
                         'width' => '16',
                         'height' => '16'
                     ]
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true
                 ],
                 'foreign_types' => [
                     \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']]
