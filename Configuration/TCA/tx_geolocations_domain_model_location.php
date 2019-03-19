@@ -190,21 +190,21 @@ $tx_geolocations_domain_model_location = [
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 [
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                    'headerThumbnail' => [
-                        'width' => '25',
-                        'height' => '25c'
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                        'headerThumbnail' => [
+                            'width' => '25',
+                            'height' => '25c'
+                        ]
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']
+                        ]
                     ]
-                ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ],
-                'overrideChildTca' => [
-                    'types' => [
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']
-                    ]
-                ]
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             )
@@ -215,22 +215,22 @@ $tx_geolocations_domain_model_location = [
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'marker',
                 [
-                'maxitems' => 1,
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                    'headerThumbnail' => [
-                        'width' => '16',
-                        'height' => '16'
+                    'maxitems' => 1,
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                        'headerThumbnail' => [
+                            'width' => '16',
+                            'height' => '16'
+                        ]
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']
+                        ]
                     ]
-                ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ],
-                'overrideChildTca' => [
-                    'types' => [
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']
-                    ]
-                ]
                 ],
                 'gif,png,svg'
             )
