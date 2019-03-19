@@ -3,10 +3,10 @@
 
 <f:be.container>
 	<f:be.pageRenderer includeCssFiles="{
-		1: '../typo3conf/ext/geolocations/Resources/Public/Css/geolocations_mod.css'
+		1: '{f:uri.resource(path: \'Css/geolocations_mod.css\')}'
 	}" includeJsFiles="{
-		2: '../typo3conf/ext/geolocations/Resources/Public/JavaScript/geolocations_mod.js'
-	}" loadJQuery="1" loadExtJsTheme="0"/>
+		2: '{f:uri.resource(path: \'JavaScript/geolocations_mod.js\')}'
+	}" />
 	<div class="typo3-fullDoc">
 		<div id="typo3-docheader">
 			<div class="typo3-docheader-functions">
