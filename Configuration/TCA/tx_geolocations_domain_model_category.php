@@ -111,7 +111,6 @@ $tx_geolocations_domain_model_category = [
         ],
         'description' => [
             'exclude' => 1,
-            'l10n_mode' => 'noCopy',
             'label' => $fieldLanguageFilePrefix . 'tx_geolocations_domain_model_category.description',
             'config' => [
                 'type' => 'text',
