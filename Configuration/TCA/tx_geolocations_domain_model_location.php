@@ -498,7 +498,7 @@ $TCA['fe_users'] = [
 
 // Display zones of the selected country
 if (intval($extensionConfiguration['zonesByCountry'])) {
-    $tx_geolocations_domain_model_location['ctrl']['requestUpdate'] = 'country';
+    $tx_geolocations_domain_model_location['columns']['country']['onChange'] = 'reload';
     $tx_geolocations_domain_model_location['columns']['zone']['config']['foreign_table_where'] = 'AND zn_country_uid=\'###REC_FIELD_country###\' ORDER BY static_country_zones.zn_name_local';
 }
 
