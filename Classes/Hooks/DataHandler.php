@@ -17,7 +17,6 @@ namespace Sonority\Geolocations\Hooks;
 
 use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
-use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -35,11 +34,16 @@ class DataHandler
      * @param string $table Table name
      * @param int $recordUid Id of the record
      * @param array $fields Field array
-     * @param DataHandler $parentObject Parent object
+     * @param \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject Parent object
      * @return void
      */
-    public function processDatamap_afterDatabaseOperations($status, $table, $recordUid, array $fields, DataHandler $parentObject)
-    {
+    public function processDatamap_afterDatabaseOperations(
+        $status,
+        $table,
+        $recordUid,
+        array $fields,
+        \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject
+    ) {
         // Clear category cache
         if ($table === 'tx_geolocations_domain_model_category') {
             /** @var FrontendInterface $cache */
