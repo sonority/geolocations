@@ -1,0 +1,34 @@
+{
+  "name": "sonority/geolocations",
+  "type": "typo3-cms-extension",
+  "version": "0.0.3",
+  "description": "AJAX-Search for locations (radialsearch & fulltextsearch) and display them on a google-map with your own styles.",
+  "license": "GNU General Public License v2.0",
+  "authors": [
+    {
+      "name": "Stephan Kellermayr",
+      "email": "stephan.kellermayr@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "~7.6.0 || ~8.7.0",
+    "typo3/cms-extbase": "~7.6.0 || ~8.7.0",
+    "typo3/cms-fluid": "~7.6.0 || ~8.7.0",
+    "sjbr/static-info-tables": "^6.3.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sonority\\Geolocations\\": "Classes/"
+    }
+  },
+  "replace": {
+    "geolocations": "self.version",
+    "typo3-ter/geolocations": "self.version"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "geolocations"
+    }
+  }
+}
