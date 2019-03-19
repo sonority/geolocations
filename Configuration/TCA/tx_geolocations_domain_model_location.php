@@ -182,19 +182,6 @@ $tx_geolocations_domain_model_location = [
                 'cols' => 80,
                 'rows' => 10,
                 //'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
-                'wizards' => [
-                    '_PADDING' => 2,
-                    'RTE' => [
-                        'notNewRecords' => 1,
-                        'RTEonly' => 1,
-                        'type' => 'script',
-                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE',
-                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_rte.gif',
-                        'module' => [
-                            'name' => 'wizard_rte'
-                        ]
-                    ]
-                ]
             ]
         ],
         'image' => [
@@ -442,7 +429,18 @@ $tx_geolocations_domain_model_location = [
         '1' => [
             'columnsOverrides' => [
                 'bodytext' => [
-                    'defaultExtras' => 'richtext:rte_transform[mode=ts_css]'
+                    'config' => [
+                        'enableRichtext' => 1,
+                        'fieldControl' => [
+                            'fullScreenRichtext' => [
+                                'disabled' => false,
+                                'options' => [
+                                    'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE'
+                                ]
+                            ]
+                        ],
+                        'richtextConfiguration' => 'default'
+                    ]
                 ]
             ],
             'showitem' => '
