@@ -200,9 +200,13 @@ $tx_geolocations_domain_model_location = [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ],
-                'foreign_types' => [
-                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']]
-                ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                'overrideChildTca' => [
+                    'types' => [
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']
+                    ]
+                ]
+                ],
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             )
         ],
         'marker' => [
@@ -222,9 +226,13 @@ $tx_geolocations_domain_model_location = [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true
                 ],
-                'foreign_types' => [
-                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']]
-                ], 'gif,png,svg'
+                'overrideChildTca' => [
+                    'types' => [
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']
+                    ]
+                ]
+                ],
+                'gif,png,svg'
             )
         ],
         'latitude' => [
