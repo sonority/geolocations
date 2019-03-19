@@ -223,7 +223,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Sonority\Geolocations\Domain\Model\Category>
      * @lazy
      */
-    protected $categories = NULL;
+    protected $categories = null;
 
     /**
      * Distance
