@@ -40,13 +40,20 @@ if (TYPO3_MODE === 'BE') {
         'apps-pagetree-folder-contains-locations',
         \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         [
-            'source' => 'EXT:geolocations/Resources/Public/Icons/ext-geolocations-folder-tree.svg'
+            'source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/ext-geolocations-folder-tree.svg'
         ]
     );
     $iconRegistry->registerIcon(
         'ext-geolocations-wizard-icon', \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         [
-            'source' => 'EXT:geolocations/Resources/Public/Icons/ce_wizard.svg'
+            'source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/ce_wizard.svg'
+        ]
+    );
+    $iconRegistry->registerIcon(
+        'ext-geolocations-google-maps-form-icon',
+        \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+        [
+            'source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Images/google-maps.png'
         ]
     );
     // Override geolocations icon

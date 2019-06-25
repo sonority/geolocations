@@ -14,7 +14,7 @@ $tx_geolocations_domain_model_location = [
         'label' => 'title',
         'label_alt' => 'address,bodytext',
         'hideAtCopy' => true,
-        'prependAtCopy' => 'LLL:EXT:lang/locallang_general.xlf:LGL.prependAtCopy',
+        'prependAtCopy' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.prependAtCopy',
         'copyAfterDuplFields' => 'sys_language_uid',
         'useColumnsForDefaultValues' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -66,14 +66,14 @@ $tx_geolocations_domain_model_location = [
         ],
         'sys_language_uid' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'special' => 'languages',
                 'items' => [
                     [
-                        'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
+                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
                         'flags-multiple'
                     ]
@@ -84,7 +84,7 @@ $tx_geolocations_domain_model_location = [
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -103,7 +103,7 @@ $tx_geolocations_domain_model_location = [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -111,31 +111,35 @@ $tx_geolocations_domain_model_location = [
         ],
         'starttime' => [
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
             'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel',
             'config' => [
                 'type' => 'input',
                 'size' => 16,
-                'max' => 20,
                 'eval' => 'datetime',
-                'default' => 0
+                'renderType' => 'inputDateTime',
+                'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true
+                ],
             ]
         ],
         'endtime' => [
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
             'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
             'config' => [
                 'type' => 'input',
                 'size' => 16,
-                'max' => 20,
                 'eval' => 'datetime',
-                'default' => 0
+                'renderType' => 'inputDateTime',
+                'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true
+                ],
             ]
         ],
         'fe_group' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.fe_group',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.fe_group',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -143,15 +147,15 @@ $tx_geolocations_domain_model_location = [
                 'maxitems' => 20,
                 'items' => [
                     [
-                        'LLL:EXT:lang/locallang_general.xlf:LGL.hide_at_login',
+                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hide_at_login',
                         -1
                     ],
                     [
-                        'LLL:EXT:lang/locallang_general.xlf:LGL.any_login',
+                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.any_login',
                         -2
                     ],
                     [
-                        'LLL:EXT:lang/locallang_general.xlf:LGL.usergroups',
+                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.usergroups',
                         '--div--'
                     ],
                 ],
@@ -178,58 +182,57 @@ $tx_geolocations_domain_model_location = [
                 'cols' => 80,
                 'rows' => 10,
                 //'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
-                'wizards' => [
-                    '_PADDING' => 2,
-                    'RTE' => [
-                        'notNewRecords' => 1,
-                        'RTEonly' => 1,
-                        'type' => 'script',
-                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE',
-                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_rte.gif',
-                        'module' => [
-                            'name' => 'wizard_rte'
-                        ]
-                    ]
-                ]
             ]
         ],
         'image' => [
             'label' => $fieldLanguageFilePrefix . 'tx_geolocations_domain_model_location.image',
             'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 [
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                    'headerThumbnail' => [
-                        'width' => '25',
-                        'height' => '25c'
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                        'headerThumbnail' => [
+                            'width' => '25',
+                            'height' => '25c'
+                        ]
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']
+                        ]
                     ]
                 ],
-                'foreign_types' => [
-                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;imageoverlayPalette,--palette--;;filePalette']]
-                ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             )
         ],
         'marker' => [
             'label' => $fieldLanguageFilePrefix . 'tx_geolocations_domain_model_location.marker',
             'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'marker',
                 [
-                'maxitems' => 1,
-                'appearance' => [
-                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
-                    'headerThumbnail' => [
-                        'width' => '16',
-                        'height' => '16'
+                    'maxitems' => 1,
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
+                        'headerThumbnail' => [
+                            'width' => '16',
+                            'height' => '16'
+                        ]
+                    ],
+                    'behaviour' => [
+                        'allowLanguageSynchronization' => true
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']
+                        ]
                     ]
                 ],
-                'foreign_types' => [
-                    \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => ['showitem' => '--palette--;;filePalette']]
-                ], 'gif,png,svg'
+                'gif,png,svg'
             )
         ],
         'latitude' => [
@@ -303,6 +306,7 @@ $tx_geolocations_domain_model_location = [
                 'foreign_table_where' => ' ORDER BY static_country_zones.zn_name_local',
                 'itemsProcFunc' => 'SJBR\StaticInfoTables\Hook\Backend\Form\ElementRenderingHelper->translateCountryZonesSelector',
                 'disableNoMatchingValueElement' => true,
+                'renderType' => 'selectSingle',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1
@@ -316,6 +320,7 @@ $tx_geolocations_domain_model_location = [
                 'foreign_table' => 'static_countries',
                 'foreign_table_where' => 'ORDER BY static_countries.cn_short_en',
                 'itemsProcFunc' => 'SJBR\StaticInfoTables\Hook\Backend\Form\ElementRenderingHelper->translateCountriesSelector',
+                'renderType' => 'selectSingle',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
@@ -372,8 +377,8 @@ $tx_geolocations_domain_model_location = [
             'config' => [
                 'type' => 'input',
                 'size' => 16,
-                'max' => 20,
-                'eval' => 'date'
+                'eval' => 'date',
+                'renderType' => 'inputDateTime'
             ]
         ],
         'fe_user' => [
@@ -385,6 +390,7 @@ $tx_geolocations_domain_model_location = [
                 'foreign_table' => 'fe_users',
                 'foreign_table_where' => 'AND fe_users.usergroup IN (###PAGE_TSCONFIG_ID###) ORDER BY fe_users.username',
                 'enableMultiSelectFilterTextfield' => true,
+                'renderType' => 'selectMultipleSideBySide',
                 'size' => 5,
                 'minitems' => 0,
                 'maxitems' => 999
@@ -400,33 +406,27 @@ $tx_geolocations_domain_model_location = [
                 'foreign_table' => 'tx_geolocations_domain_model_category',
                 'foreign_table_field' => 'tablenames',
                 'foreign_sortby' => 'sorting_foreign',
-                'wizards' => [
-                    '_PADDING' => 1,
-                    '_VERTICAL' => 1,
-                    'edit' => [
-                        'type' => 'popup',
-                        'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_edit',
-                        'module' => [
-                            'name' => 'wizard_edit'
-                        ],
-                        'icon' => 'edit2.gif',
-                        'popup_onlyOpenIfSelected' => 1,
-                        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1'
-                    ],
-                    'add' => [
-                        'type' => 'script',
-                        'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_create',
-                        'icon' => 'add.gif',
-                        'params' => [
-                            'table' => 'tx_mymap_domain_model_category',
+                /* Feature #81976: https://forge.typo3.org/issues/81976 */
+                /*
+                'fieldControl' => [
+                    'addRecord' => [
+                        'disabled' => false,
+                        'options' => [
                             'pid' => '###CURRENT_PID###',
-                            'setValue' => 'prepend'
-                        ],
-                        'module' => [
-                            'name' => 'wizard_add'
+                            'setValue' => 'prepend',
+                            'table' => 'tx_mymap_domain_model_category',
+                            'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_create'
+                        ]
+                    ],
+                    'editPopup' => [
+                        'disabled' => false,
+                        'options' => [
+                            'title' => 'LLL:EXT:lang/locallang_misc.xlf:shortcut_edit',
+                            'windowOpenParameters' => 'height=350,width=580,status=0,menubar=0,scrollbars=1'
                         ]
                     ]
                 ]
+                */
             ]
         ]
     ],
@@ -434,7 +434,18 @@ $tx_geolocations_domain_model_location = [
         '1' => [
             'columnsOverrides' => [
                 'bodytext' => [
-                    'defaultExtras' => 'richtext:rte_transform[mode=ts_css]'
+                    'config' => [
+                        'enableRichtext' => 1,
+                        'fieldControl' => [
+                            'fullScreenRichtext' => [
+                                'disabled' => false,
+                                'options' => [
+                                    'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE'
+                                ]
+                            ]
+                        ],
+                        'richtextConfiguration' => 'default'
+                    ]
                 ]
             ],
             'showitem' => '
@@ -479,15 +490,15 @@ $tx_geolocations_domain_model_location = [
         ]
     ]
 ];
-$TCA['fe_users'] = array(
-    'ctrl' => array(
+$TCA['fe_users'] = [
+    'ctrl' => [
         'label' => 'name'
-    )
-);
+    ]
+];
 
 // Display zones of the selected country
 if (intval($extensionConfiguration['zonesByCountry'])) {
-    $tx_geolocations_domain_model_location['ctrl']['requestUpdate'] = 'country';
+    $tx_geolocations_domain_model_location['columns']['country']['onChange'] = 'reload';
     $tx_geolocations_domain_model_location['columns']['zone']['config']['foreign_table_where'] = 'AND zn_country_uid=\'###REC_FIELD_country###\' ORDER BY static_country_zones.zn_name_local';
 }
 

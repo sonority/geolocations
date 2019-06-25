@@ -19,6 +19,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Imaging\IconFactory;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
@@ -55,18 +56,21 @@ class GeoCodeElement
      */
     public function render($parameterArray, $data)
     {
+        /* @var $pageRenderer \TYPO3\CMS\Core\Page\PageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        /* @var $iconFactory \TYPO3\CMS\Core\Imaging\IconFactory */
+        $iconFactory = GeneralUtility::makeInstance(IconFactory::class);
+
         $extConf = $GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['geolocations'];
         if ($extConf) {
             $extConf = unserialize($extConf);
         }
         $extKey = 'geolocations';
-        $extRelPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($extKey);
         // Add custom javascript and CSS
         $pageRenderer->addJsFile('//maps.google.com/maps/api/js?key=' . $extConf['apiKey'] . '&libraries=places', null, false,
             true, '', true);
-        $pageRenderer->addJsFile($extRelPath . 'Resources/Public/JavaScript/geolocations_tca.min.js');
-        $pageRenderer->addCssFile($extRelPath . 'Resources/Public/Css/geolocations_tca.min.css');
+        $pageRenderer->addJsFile('EXT:' . $extKey . '/Resources/Public/JavaScript/geolocations_tca.min.js');
+        $pageRenderer->addCssFile('EXT:' . $extKey . '/Resources/Public/Css/geolocations_tca.min.css');
         // Add inline-language for javascript
         $pageRenderer->addInlineLanguageLabelFile('EXT:' . $extKey . '/Resources/Private/Language/locallang.xlf');
 
@@ -87,21 +91,23 @@ class GeoCodeElement
         $size = MathUtility::forceIntegerInRange($config['size'] ? : $this->defaultInputWidth, $this->minimumInputWidth,
                 $this->maxInputWidth);
         $evalList = GeneralUtility::trimExplode(',', $config['eval'], true);
-        $classes = array();
-        $attributes = array();
+        $classes = [];
+        $attributes = [];
 
         foreach ($evalList as $func) {
             switch ($func) {
                 case 'required':
-                    $validationRules[] = array('type' => 'required');
+                    $validationRules[] = [
+                        'type' => 'required'
+                    ];
                     break;
             }
         }
-        $paramsList = array(
+        $paramsList = [
             'field' => $parameterArray['itemFormElName'],
             'evalList' => '',
             'is_in' => '',
-        );
+        ];
         // Set classes
         $classes[] = 'form-control';
         $classes[] = 't3js-clearable';
@@ -139,6 +145,9 @@ class GeoCodeElement
         // This is the ACTUAL form field - values from the EDITABLE field must be transferred to this field which is the one that is written to the database.
         $html .= '<input type="hidden" name="' . $parameterArray['itemFormElName'] . '" value="' . htmlspecialchars($parameterArray['itemFormElValue']) . '" />';
 
+        $iconLabel = $iconFactory->getIcon('ext-geolocations-google-maps-form-icon',
+            \TYPO3\CMS\Core\Imaging\Icon::SIZE_SMALL);
+
         // Add HTML wrapper
         $html = '
             <div class="input-group">
@@ -149,9 +158,7 @@ class GeoCodeElement
                 </span>
                 <span class="input-group-btn">
                     <label class="btn btn-default" onclick="Geocoder.showMap()" title="' . LocalizationUtility::translate('geocoder.map.titleText',
-                $extKey) . '">
-                        <img width="16" height="16" src="/typo3conf/ext/' . $extKey . '/Resources/Public/Images/google-maps.png">
-                    </label>
+                $extKey) . '">' . $iconLabel . '</label>
                 </span>
             </div>
             <script type="text/javascript">
